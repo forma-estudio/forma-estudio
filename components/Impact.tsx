@@ -51,114 +51,104 @@ export default function Impact() {
 
   return (
     <section ref={sectionRef} className="bg-forma-white py-20 px-6 relative overflow-hidden">
-      {/* Decorative @ symbol - Left (SVG with glossy effect) */}
+      {/* Decorative @ symbol - Left (SVG with precise glossy effect) */}
       <svg
-        className="absolute -left-32 top-0 w-96 h-96 pointer-events-none z-0 hidden md:block"
-        viewBox="0 0 300 300"
+        width="500"
+        height="500"
+        viewBox="0 0 500 500"
+        className="absolute -left-40 top-0 pointer-events-none z-0 hidden md:block"
+        style={{ opacity: 0.5 }}
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="glossGradientLeft" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="rgba(143, 61, 179, 0.2)" />
-            <stop offset="25%" stopColor="rgba(111, 45, 168, 0.12)" />
-            <stop offset="50%" stopColor="rgba(70, 25, 110, 0.08)" />
-            <stop offset="75%" stopColor="rgba(111, 45, 168, 0.12)" />
-            <stop offset="100%" stopColor="rgba(143, 61, 179, 0.2)" />
+          <linearGradient id="glossyVioletLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#B794F6" />
+            <stop offset="15%" stopColor="#8B2FD9" />
+            <stop offset="35%" stopColor="#4A1868" />
+            <stop offset="50%" stopColor="#E9D5FF" />
+            <stop offset="65%" stopColor="#4A1868" />
+            <stop offset="85%" stopColor="#8B2FD9" />
+            <stop offset="100%" stopColor="#2D0F47" />
           </linearGradient>
-          <filter id="glossShadow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+          <filter id="softBlurShadowLeft">
+            <feGaussianBlur stdDeviation="6" />
           </filter>
         </defs>
-        {/* Shadow behind */}
         <text
-          x="150"
-          y="170"
-          fontSize="240"
-          fontWeight="bold"
+          x="50%"
+          y="55%"
           textAnchor="middle"
-          fill="rgba(70, 25, 110, 0.04)"
-          filter="url(#glossShadow)"
+          dominantBaseline="middle"
+          fontSize="450"
+          fontWeight="900"
+          fill="#2D0F47"
+          opacity="0.4"
+          filter="url(#softBlurShadowLeft)"
+          transform="translate(8,8)"
           style={{ userSelect: 'none' }}
         >
           @
         </text>
-        {/* Main symbol with gradient */}
         <text
-          x="150"
-          y="170"
-          fontSize="240"
-          fontWeight="bold"
+          x="50%"
+          y="50%"
           textAnchor="middle"
-          fill="url(#glossGradientLeft)"
-          style={{ userSelect: 'none' }}
-        >
-          @
-        </text>
-        {/* Highlight shine effect */}
-        <text
-          x="140"
-          y="160"
-          fontSize="240"
-          fontWeight="bold"
-          textAnchor="middle"
-          fill="rgba(255, 255, 255, 0.08)"
+          dominantBaseline="middle"
+          fontSize="450"
+          fontWeight="900"
+          fill="url(#glossyVioletLeft)"
           style={{ userSelect: 'none' }}
         >
           @
         </text>
       </svg>
 
-      {/* Decorative @ symbol - Right (SVG with glossy effect) */}
+      {/* Decorative @ symbol - Right (SVG with precise glossy effect) */}
       <svg
-        className="absolute -right-32 top-1/3 w-96 h-96 pointer-events-none z-0 hidden md:block"
-        viewBox="0 0 300 300"
+        width="500"
+        height="500"
+        viewBox="0 0 500 500"
+        className="absolute -right-40 top-1/3 pointer-events-none z-0 hidden md:block"
+        style={{ opacity: 0.5, transform: 'scaleX(-1)' }}
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="glossGradientRight" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="rgba(143, 61, 179, 0.2)" />
-            <stop offset="25%" stopColor="rgba(111, 45, 168, 0.12)" />
-            <stop offset="50%" stopColor="rgba(70, 25, 110, 0.08)" />
-            <stop offset="75%" stopColor="rgba(111, 45, 168, 0.12)" />
-            <stop offset="100%" stopColor="rgba(143, 61, 179, 0.2)" />
+          <linearGradient id="glossyVioletRight" x1="100%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="#B794F6" />
+            <stop offset="15%" stopColor="#8B2FD9" />
+            <stop offset="35%" stopColor="#4A1868" />
+            <stop offset="50%" stopColor="#E9D5FF" />
+            <stop offset="65%" stopColor="#4A1868" />
+            <stop offset="85%" stopColor="#8B2FD9" />
+            <stop offset="100%" stopColor="#2D0F47" />
           </linearGradient>
-          <filter id="glossShadowRight" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+          <filter id="softBlurShadowRight">
+            <feGaussianBlur stdDeviation="6" />
           </filter>
         </defs>
-        {/* Shadow behind */}
         <text
-          x="150"
-          y="170"
-          fontSize="240"
-          fontWeight="bold"
+          x="50%"
+          y="55%"
           textAnchor="middle"
-          fill="rgba(70, 25, 110, 0.04)"
-          filter="url(#glossShadowRight)"
+          dominantBaseline="middle"
+          fontSize="450"
+          fontWeight="900"
+          fill="#2D0F47"
+          opacity="0.4"
+          filter="url(#softBlurShadowRight)"
+          transform="translate(8,8)"
           style={{ userSelect: 'none' }}
         >
           @
         </text>
-        {/* Main symbol with gradient */}
         <text
-          x="150"
-          y="170"
-          fontSize="240"
-          fontWeight="bold"
+          x="50%"
+          y="50%"
           textAnchor="middle"
-          fill="url(#glossGradientRight)"
-          style={{ userSelect: 'none' }}
-        >
-          @
-        </text>
-        {/* Highlight shine effect */}
-        <text
-          x="140"
-          y="160"
-          fontSize="240"
-          fontWeight="bold"
-          textAnchor="middle"
-          fill="rgba(255, 255, 255, 0.08)"
+          dominantBaseline="middle"
+          fontSize="450"
+          fontWeight="900"
+          fill="url(#glossyVioletRight)"
           style={{ userSelect: 'none' }}
         >
           @
