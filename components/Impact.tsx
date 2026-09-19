@@ -57,18 +57,18 @@ export default function Impact() {
         height="500"
         viewBox="0 0 500 500"
         className="absolute -left-40 top-0 pointer-events-none z-0 hidden md:block"
-        style={{ opacity: 0.5 }}
+        style={{ opacity: 0.65 }}
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
           <linearGradient id="glossyVioletLeft" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#B794F6" />
-            <stop offset="15%" stopColor="#8B2FD9" />
-            <stop offset="35%" stopColor="#4A1868" />
-            <stop offset="50%" stopColor="#E9D5FF" />
-            <stop offset="65%" stopColor="#4A1868" />
-            <stop offset="85%" stopColor="#8B2FD9" />
-            <stop offset="100%" stopColor="#2D0F47" />
+            <stop offset="0%" stopColor="#D6BCFA" />
+            <stop offset="15%" stopColor="#B794F6" />
+            <stop offset="35%" stopColor="#8B5CF6" />
+            <stop offset="50%" stopColor="#F3E8FF" />
+            <stop offset="65%" stopColor="#8B5CF6" />
+            <stop offset="85%" stopColor="#B794F6" />
+            <stop offset="100%" stopColor="#9F7AEA" />
           </linearGradient>
           <filter id="softBlurShadowLeft">
             <feGaussianBlur stdDeviation="6" />
@@ -81,8 +81,8 @@ export default function Impact() {
           dominantBaseline="middle"
           fontSize="450"
           fontWeight="900"
-          fill="#2D0F47"
-          opacity="0.4"
+          fill="#8B5CF6"
+          opacity="0.15"
           filter="url(#softBlurShadowLeft)"
           transform="translate(8,8)"
           style={{ userSelect: 'none' }}
@@ -109,18 +109,18 @@ export default function Impact() {
         height="500"
         viewBox="0 0 500 500"
         className="absolute -right-40 top-1/3 pointer-events-none z-0 hidden md:block"
-        style={{ opacity: 0.5, transform: 'scaleX(-1)' }}
+        style={{ opacity: 0.65, transform: 'scaleX(-1)' }}
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
           <linearGradient id="glossyVioletRight" x1="100%" y1="100%" x2="0%" y2="0%">
-            <stop offset="0%" stopColor="#B794F6" />
-            <stop offset="15%" stopColor="#8B2FD9" />
-            <stop offset="35%" stopColor="#4A1868" />
-            <stop offset="50%" stopColor="#E9D5FF" />
-            <stop offset="65%" stopColor="#4A1868" />
-            <stop offset="85%" stopColor="#8B2FD9" />
-            <stop offset="100%" stopColor="#2D0F47" />
+            <stop offset="0%" stopColor="#D6BCFA" />
+            <stop offset="15%" stopColor="#B794F6" />
+            <stop offset="35%" stopColor="#8B5CF6" />
+            <stop offset="50%" stopColor="#F3E8FF" />
+            <stop offset="65%" stopColor="#8B5CF6" />
+            <stop offset="85%" stopColor="#B794F6" />
+            <stop offset="100%" stopColor="#9F7AEA" />
           </linearGradient>
           <filter id="softBlurShadowRight">
             <feGaussianBlur stdDeviation="6" />
@@ -133,8 +133,8 @@ export default function Impact() {
           dominantBaseline="middle"
           fontSize="450"
           fontWeight="900"
-          fill="#2D0F47"
-          opacity="0.4"
+          fill="#8B5CF6"
+          opacity="0.15"
           filter="url(#softBlurShadowRight)"
           transform="translate(8,8)"
           style={{ userSelect: 'none' }}
