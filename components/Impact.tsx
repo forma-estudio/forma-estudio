@@ -90,7 +90,7 @@ export default function Impact() {
             </div>
 
             {/* Card 3 */}
-            <div className="border border-forma-purple rounded-3xl p-8 bg-white hover:shadow-lg transition">
+            <div className="rounded-3xl p-8 hover:shadow-lg transition" style={{ backgroundColor: 'rgba(111, 45, 168, 0.06)' }}>
               <p className="text-2xl md:text-3xl font-bold text-center leading-snug text-forma-purple">
                 Qué aburrido ser normal, mejor ser extraordinario.
               </p>
