@@ -74,24 +74,24 @@ export default function Impact() {
           {/* Right Column - Cards */}
           <div className="space-y-6">
             {/* Card 1 */}
-            <div className="border-2 border-forma-purple rounded-3xl p-8 bg-forma-black/5 hover:bg-forma-black/10 transition">
+            <div className="border border-forma-purple rounded-3xl p-8 bg-white hover:shadow-lg transition">
               <div className="text-5xl md:text-6xl font-bold text-forma-purple mb-3">
                 +{count500}
               </div>
-              <p className="text-xl text-forma-black font-semibold">proyectos</p>
+              <p className="text-xl text-forma-purple font-semibold">proyectos</p>
             </div>
 
             {/* Card 2 */}
-            <div className="border-2 border-forma-pink rounded-3xl p-8 bg-forma-black/5 hover:bg-forma-black/10 transition">
-              <div className="text-5xl md:text-6xl font-bold text-forma-pink mb-3">
+            <div className="border border-forma-purple rounded-3xl p-8 bg-white hover:shadow-lg transition">
+              <div className="text-5xl md:text-6xl font-bold text-forma-purple mb-3">
                 +{count10}
               </div>
-              <p className="text-xl text-forma-black font-semibold">años de experiencia en diseño web</p>
+              <p className="text-xl text-forma-purple font-semibold">años de experiencia en diseño web</p>
             </div>
 
             {/* Card 3 */}
-            <div className="bg-gradient-to-br from-forma-purple to-forma-pink rounded-3xl p-8 text-forma-white hover:shadow-2xl transition">
-              <p className="text-2xl md:text-3xl font-bold text-center leading-snug">
+            <div className="border border-forma-purple rounded-3xl p-8 bg-white hover:shadow-lg transition">
+              <p className="text-2xl md:text-3xl font-bold text-center leading-snug text-forma-purple">
                 Qué aburrido ser normal, mejor ser extraordinario.
               </p>
             </div>
