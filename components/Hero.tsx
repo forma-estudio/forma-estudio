@@ -11,6 +11,9 @@ export default function Hero() {
     >
       <div className="animate-gradient absolute inset-0" style={{
         background: 'linear-gradient(115deg, #000000 0%, #000000 25%, #8B2FD9 40%, #FF2D6B 55%, #000000 75%, #000000 100%)',
+        willChange: 'background-position',
+        transform: 'translateZ(0)',
+        backfaceVisibility: 'hidden',
       }} />
       <div className="shine-overlay" />
       <div className="absolute inset-0 bg-gradient-to-t from-forma-black/40 to-transparent" />
