@@ -21,7 +21,7 @@ export default function AnimatedText() {
 
   return (
     <span
-      className={`inline-block min-w-[220px] text-forma-pink transition-all duration-500 ease-in-out ${
+      className={`inline-block text-forma-pink transition-all duration-500 ease-in-out ${
         isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
       }`}
     >
