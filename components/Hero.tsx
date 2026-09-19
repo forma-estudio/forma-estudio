@@ -26,13 +26,13 @@ export default function Hero() {
             href="/contacto"
             className="bg-forma-pink text-forma-black px-8 py-4 rounded-lg font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105"
           >
-            Empezar Ahora
+            Hablemos de tu proyecto
           </Link>
           <Link
             href="/portafolio"
             className="border-2 border-forma-pink text-forma-pink px-8 py-4 rounded-lg font-semibold hover:bg-forma-pink hover:text-forma-black transition-all transform hover:scale-105"
           >
-            Ver Trabajos
+            Ver trabajos
           </Link>
         </div>
       </div>
