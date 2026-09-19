@@ -64,10 +64,10 @@ export default function Impact() {
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-forma-purple to-forma-pink mb-8" />
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              En FORMA te ayudamos a que tu negocio crezca, con estrategia, tecnología y creatividad que dan resultados.
+              En <span className="font-bold">FORMA</span> te ayudamos a que tu negocio crezca, con estrategia, tecnología y creatividad que dan resultados.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              También sabemos entender tus tiempos.
+              Sí, sabemos entender tus apuros.
             </p>
           </div>
 
