@@ -27,15 +27,6 @@ body {
   to { transform: translate3d(-50%, 0, 0); }
 }
 
-@keyframes shine-sweep {
-  0% {
-    background-position: -200% -200%;
-  }
-  100% {
-    background-position: 200% 200%;
-  }
-}
-
 .bg-layer {
   position: absolute;
   inset: 0;
@@ -52,20 +43,4 @@ body {
   will-change: transform;
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
-}
-
-.shine-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    115deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.22) 25%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.22) 75%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 200% 200%;
-  animation: shine-sweep 5s ease-in-out infinite;
-  pointer-events: none;
 }
