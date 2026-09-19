@@ -21,3 +21,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes color-cycle {
+  0%, 100% { color: #FF91A4; }
+  50% { color: #6F2DA8; }
+}
+
+.animate-gradient {
+  animation: gradient-shift 6s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-color-cycle {
+  animation: color-cycle 3s ease-in-out infinite;
+}
