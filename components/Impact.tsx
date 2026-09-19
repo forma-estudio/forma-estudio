@@ -78,7 +78,7 @@ export default function Impact() {
               <div className="text-6xl md:text-7xl font-bold text-forma-purple mb-4">
                 +{count500}
               </div>
-              <p className="text-xl text-forma-purple font-semibold">proyectos</p>
+              <p className="text-2xl md:text-3xl text-forma-purple font-semibold">proyectos</p>
             </div>
 
             {/* Card 2 - Medium */}
@@ -86,7 +86,7 @@ export default function Impact() {
               <div className="text-4xl md:text-5xl font-bold text-forma-purple mb-3">
                 +{count10}
               </div>
-              <p className="text-lg text-forma-purple font-semibold">años de experiencia en diseño web</p>
+              <p className="text-xl md:text-2xl text-forma-purple font-semibold">años de experiencia en diseño web</p>
             </div>
 
             {/* Card 3 - Smallest */}
