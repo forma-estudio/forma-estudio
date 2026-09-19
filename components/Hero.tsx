@@ -10,6 +10,9 @@ export default function Hero() {
         <div className="bg-layer" />
       </div>
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <div className="inline-block border-2 border-forma-pink text-forma-pink rounded-full px-4 py-2 text-sm font-medium mb-8 bg-forma-pink/5">
+          Estudio de diseño web
+        </div>
         <div className="mb-6">
           <h1 className="text-5xl md:text-7xl font-bold leading-tight whitespace-nowrap">
             Llevamos tu visión más allá
