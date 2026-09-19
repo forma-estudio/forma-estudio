@@ -19,7 +19,9 @@ export default function Hero() {
           </div>
         </div>
         <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Creamos experiencias web excepcionales que conectan con tu audiencia y potencian tu marca
+          Diseñamos, desarrollamos y gestionamos tu página web, tu lugar.<br />
+          Para empresas, profesionales y negocios locales.<br />
+          Nosotros nos encargamos.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
