@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <div className="mb-6">
           <h1 className="text-5xl md:text-7xl font-bold leading-tight whitespace-nowrap">
-            Llevamos tu visión más allá.
+            Llevamos tu visión más allá
           </h1>
           <div className="text-5xl md:text-7xl font-bold leading-tight mt-3">
             <AnimatedText />
