@@ -51,13 +51,37 @@ export default function Impact() {
 
   return (
     <section ref={sectionRef} className="bg-forma-white py-20 px-6 relative overflow-hidden">
-      {/* Decorative @ elements */}
-      <div className="absolute -top-40 -left-40 text-9xl font-bold pointer-events-none z-0 hidden md:block" style={{ color: 'rgba(111, 45, 168, 0.06)' }}>
-        @
-      </div>
-      <div className="absolute -bottom-40 -right-40 text-9xl font-bold pointer-events-none z-0 hidden md:block" style={{ color: 'rgba(111, 45, 168, 0.06)' }}>
-        @
-      </div>
+      {/* Decorative curved ribbon SVG - Left */}
+      <svg
+        className="absolute -left-32 top-0 w-96 h-96 pointer-events-none z-0 hidden md:block"
+        viewBox="0 0 400 600"
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ opacity: 0.08 }}
+      >
+        <path
+          d="M 200,50 Q 100,150 150,300 T 200,500"
+          stroke="#6F2DA8"
+          strokeWidth="45"
+          fill="none"
+          strokeLinecap="round"
+        />
+      </svg>
+
+      {/* Decorative curved ribbon SVG - Right */}
+      <svg
+        className="absolute -right-32 top-1/3 w-96 h-96 pointer-events-none z-0 hidden md:block"
+        viewBox="0 0 400 600"
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ opacity: 0.08, transform: 'scaleX(-1)' }}
+      >
+        <path
+          d="M 200,50 Q 100,150 150,300 T 200,500"
+          stroke="#6F2DA8"
+          strokeWidth="45"
+          fill="none"
+          strokeLinecap="round"
+        />
+      </svg>
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
