@@ -56,8 +56,12 @@ export default function Impact() {
         className="absolute -left-20 top-20 pointer-events-none z-0 hidden md:block font-bold"
         style={{
           fontSize: '600px',
-          color: 'rgba(111, 45, 168, 0.09)',
           lineHeight: '1',
+          background: 'linear-gradient(135deg, rgba(143, 61, 179, 0.15) 0%, rgba(111, 45, 168, 0.04) 50%, rgba(70, 25, 110, 0.02) 100%)',
+          backgroundClip: 'text',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          filter: 'drop-shadow(0 4px 8px rgba(111, 45, 168, 0.08))',
         }}
       >
         @
@@ -68,8 +72,12 @@ export default function Impact() {
         className="absolute -right-20 top-1/2 pointer-events-none z-0 hidden md:block font-bold"
         style={{
           fontSize: '600px',
-          color: 'rgba(111, 45, 168, 0.09)',
           lineHeight: '1',
+          background: 'linear-gradient(135deg, rgba(143, 61, 179, 0.15) 0%, rgba(111, 45, 168, 0.04) 50%, rgba(70, 25, 110, 0.02) 100%)',
+          backgroundClip: 'text',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          filter: 'drop-shadow(0 4px 8px rgba(111, 45, 168, 0.08))',
         }}
       >
         @
