@@ -50,8 +50,16 @@ export default function Impact() {
   }, [hasAnimated])
 
   return (
-    <section ref={sectionRef} className="bg-forma-white py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section ref={sectionRef} className="bg-forma-white py-20 px-6 relative overflow-hidden">
+      {/* Decorative @ elements */}
+      <div className="absolute -top-40 -left-40 text-9xl font-bold pointer-events-none z-0 hidden md:block" style={{ color: 'rgba(111, 45, 168, 0.06)' }}>
+        @
+      </div>
+      <div className="absolute -bottom-40 -right-40 text-9xl font-bold pointer-events-none z-0 hidden md:block" style={{ color: 'rgba(111, 45, 168, 0.06)' }}>
+        @
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left Column */}
           <div>
