@@ -74,25 +74,27 @@ export default function Impact() {
           {/* Right Column - Cards */}
           <div className="space-y-6">
             {/* Card 1 - Largest */}
-            <div className="border border-forma-purple rounded-3xl p-10 bg-white">
+            <div className="border border-forma-purple rounded-3xl p-10 bg-white text-center">
               <div className="text-6xl md:text-7xl font-bold text-forma-purple mb-4">
                 +{count500}
               </div>
-              <p className="text-lg text-forma-purple font-semibold">proyectos</p>
+              <p className="text-xl text-forma-purple font-semibold">proyectos</p>
             </div>
 
             {/* Card 2 - Medium */}
-            <div className="border border-forma-purple rounded-3xl p-7 bg-white">
+            <div className="border border-forma-purple rounded-3xl p-7 bg-white text-center">
               <div className="text-4xl md:text-5xl font-bold text-forma-purple mb-3">
                 +{count10}
               </div>
-              <p className="text-base text-forma-purple font-semibold">años de experiencia en diseño web</p>
+              <p className="text-lg text-forma-purple font-semibold">años de experiencia en diseño web</p>
             </div>
 
             {/* Card 3 - Smallest */}
-            <div className="rounded-3xl p-6" style={{ backgroundColor: 'rgba(111, 45, 168, 0.06)' }}>
-              <p className="text-lg md:text-2xl font-bold text-center leading-snug text-forma-purple">
-                Qué aburrido ser normal, mejor ser extraordinario.
+            <div className="rounded-3xl p-6 text-center" style={{ backgroundColor: 'rgba(111, 45, 168, 0.06)' }}>
+              <p className="text-lg md:text-2xl text-forma-purple leading-snug">
+                <span className="font-bold">Qué aburrido ser normal.</span>
+                <br />
+                <span className="font-normal">Mejor ser extraordinario.</span>
               </p>
             </div>
           </div>
