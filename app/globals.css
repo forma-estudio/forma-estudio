@@ -22,9 +22,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@keyframes gradient-shift-transform {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(100%); }
+@keyframes slide {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
 }
 
 @keyframes shine-sweep {
@@ -36,8 +36,22 @@ body {
   }
 }
 
-.animate-gradient {
-  animation: gradient-shift-transform 20s linear infinite;
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  width: 250%;
+  height: 100%;
+  background: linear-gradient(115deg,
+    #000000 0%, #000000 12%,
+    #8B2FD9 22%, #FF2D6B 30%,
+    #000000 40%, #000000 60%,
+    #8B2FD9 70%, #FF2D6B 78%,
+    #000000 88%, #000000 100%
+  );
+  animation: slide 22s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
 }
 
 .shine-overlay {
