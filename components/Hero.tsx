@@ -10,7 +10,6 @@ export default function Hero() {
         <div className="bg-layer" />
       </div>
       <div className="shine-overlay" />
-      <div className="absolute inset-0 bg-gradient-to-t from-forma-black/40 to-transparent" />
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <div className="mb-6">
           <h1 className="text-5xl md:text-7xl font-bold leading-tight whitespace-nowrap">
