@@ -22,9 +22,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+@keyframes gradient-shift-transform {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
 }
 
 @keyframes shine-sweep {
@@ -37,8 +37,7 @@ body {
 }
 
 .animate-gradient {
-  animation: gradient-shift 20s linear infinite;
-  background-size: 350% 350%;
+  animation: gradient-shift-transform 20s linear infinite;
 }
 
 .shine-overlay {
