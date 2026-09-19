@@ -3,8 +3,17 @@ import AnimatedText from './AnimatedText'
 
 export default function Hero() {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-forma-black via-forma-purple to-forma-black text-forma-white flex items-center justify-center pt-20 animate-gradient relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-forma-black/50 to-transparent" />
+    <section
+      className="min-h-screen text-forma-white flex items-center justify-center pt-20 relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(115deg, #000000 0%, #000000 25%, #8B2FD9 40%, #FF2D6B 55%, #000000 75%, #000000 100%)',
+      }}
+    >
+      <div className="animate-gradient absolute inset-0" style={{
+        background: 'linear-gradient(115deg, #000000 0%, #000000 25%, #8B2FD9 40%, #FF2D6B 55%, #000000 75%, #000000 100%)',
+      }} />
+      <div className="shine-overlay" />
+      <div className="absolute inset-0 bg-gradient-to-t from-forma-black/40 to-transparent" />
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <div className="mb-6">
           <h1 className="text-5xl md:text-7xl font-bold leading-tight whitespace-nowrap">

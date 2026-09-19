@@ -23,11 +23,36 @@ body {
 }
 
 @keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes shine-sweep {
+  0% {
+    background-position: -200% -200%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
 }
 
 .animate-gradient {
-  animation: gradient-shift 6s ease infinite;
+  animation: gradient-shift 20s linear infinite;
+  background-size: 350% 350%;
+}
+
+.shine-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.22) 25%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.22) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
   background-size: 200% 200%;
+  animation: shine-sweep 5s ease-in-out infinite;
+  pointer-events: none;
 }
