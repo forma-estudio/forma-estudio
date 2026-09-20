@@ -118,9 +118,9 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
         <div className="relative">
           <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {slides.map((slide, idx) => (
-              <div key={idx} className="w-full flex-shrink-0 flex flex-col items-center justify-center text-center space-y-16 py-24">
+              <div key={idx} className="w-full flex-shrink-0 flex flex-col items-center justify-center text-center py-24" style={{ gap: '240px' }}>
                 {/* Título con animación reveal */}
-                <div key={currentSlide} className="max-w-3xl space-y-8">
+                <div key={currentSlide} className="max-w-3xl" style={{ display: 'flex', flexDirection: 'column', gap: '160px' }}>
                   {/* Palabras normales */}
                   <div className="text-5xl md:text-6xl font-bold leading-tight text-white flex flex-wrap gap-2">
                     {slide.normalWords.map((word, i) => (
@@ -163,7 +163,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
         </div>
 
         {/* Indicador de progreso */}
-        <div className="flex justify-center gap-3 mt-32">
+        <div className="flex justify-center gap-3" style={{ marginTop: '240px' }}>
           {slides.map((_, idx) => (
             <button
               key={idx}
