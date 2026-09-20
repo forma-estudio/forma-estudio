@@ -2,7 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-export default function ServiceCarousel() {
+interface ServiceCarouselProps {
+  withBackground?: boolean
+}
+
+export default function ServiceCarousel({ withBackground = true }: ServiceCarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
   const autoplayIntervalRef = useRef<NodeJS.Timeout | null>(null)
@@ -102,7 +106,7 @@ export default function ServiceCarousel() {
   const Icon = icons[currentSlide]
 
   return (
-    <section id="servicios" className="bg-forma-black py-24 px-6 min-h-screen flex flex-col justify-center" style={{ color: '#FFFFFF' }}>
+    <section id={withBackground ? "servicios" : undefined} className={`py-24 px-6 min-h-screen flex flex-col justify-center ${withBackground ? 'bg-forma-black' : ''}`} style={{ color: '#FFFFFF' }}>
       <div
         className="max-w-6xl mx-auto w-full overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
