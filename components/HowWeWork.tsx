@@ -49,10 +49,10 @@ export default function HowWeWork() {
           {steps.map((step, idx) => (
             <div
               key={`card-${step.number}`}
-              className={`card-item flex-shrink-0 rounded-2xl p-8 bg-gradient-to-br ${gradients[idx]} flex flex-col text-white transition-transform duration-300 ease-out`}
+              className={`card-item flex-shrink-0 rounded-2xl p-8 bg-gradient-to-br ${gradients[idx]} flex flex-col text-white transition-transform duration-300 ease-out cursor-pointer`}
               style={{
                 width: 'clamp(280px, 24vw, 380px)',
-                height: 'clamp(280px, 24vw, 380px)'
+                minHeight: 'clamp(320px, 28vw, 420px)'
               }}
             >
               <div>
