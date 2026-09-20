@@ -53,27 +53,25 @@ export default function Impact() {
   return (
     <section ref={sectionRef} className="bg-forma-white py-20 px-6 relative overflow-hidden">
       {/* Decorative @ glossy image - Left */}
-      <div className="absolute -left-40 top-0 w-96 h-96 pointer-events-none z-0 hidden md:block overflow-hidden">
+      <div className="absolute left-0 top-0 w-96 h-96 pointer-events-none z-0 hidden md:block overflow-hidden opacity-30">
         <Image
           src="/images/arroba.png"
           alt=""
           width={500}
           height={500}
           className="w-full h-full object-cover"
-          style={{ opacity: 0.25 }}
           priority={false}
         />
       </div>
 
       {/* Decorative @ glossy image - Right */}
-      <div className="absolute -right-40 top-1/3 w-96 h-96 pointer-events-none z-0 hidden md:block overflow-hidden" style={{ transform: 'scaleX(-1)' }}>
+      <div className="absolute right-0 top-1/3 w-96 h-96 pointer-events-none z-0 hidden md:block overflow-hidden opacity-30" style={{ transform: 'scaleX(-1)' }}>
         <Image
           src="/images/arroba.png"
           alt=""
           width={500}
           height={500}
           className="w-full h-full object-cover"
-          style={{ opacity: 0.25 }}
           priority={false}
         />
       </div>
