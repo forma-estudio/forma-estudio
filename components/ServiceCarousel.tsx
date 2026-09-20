@@ -106,7 +106,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
   const Icon = icons[currentSlide]
 
   return (
-    <section id={withBackground ? "servicios" : undefined} className={`py-24 px-6 min-h-screen flex flex-col justify-center ${withBackground ? 'bg-forma-black' : ''}`} style={{ color: '#FFFFFF' }}>
+    <section id={withBackground ? "servicios" : undefined} className={`py-32 px-6 min-h-screen flex flex-col justify-center ${withBackground ? 'bg-forma-black' : ''}`} style={{ color: '#FFFFFF' }}>
       <div
         className="max-w-6xl mx-auto w-full overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
@@ -118,11 +118,11 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
         <div className="relative">
           <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {slides.map((slide, idx) => (
-              <div key={idx} className="w-full flex-shrink-0 flex flex-col items-center justify-center text-center space-y-12 py-12">
+              <div key={idx} className="w-full flex-shrink-0 flex flex-col items-center justify-center text-center space-y-16 py-24">
                 {/* Título con animación reveal */}
                 <div key={currentSlide} className="max-w-3xl space-y-2">
                   {/* Palabras normales */}
-                  <div className="text-4xl md:text-5xl font-bold leading-tight text-white flex flex-wrap gap-2">
+                  <div className="text-5xl md:text-6xl font-bold leading-tight text-white flex flex-wrap gap-2">
                     {slide.normalWords.map((word, i) => (
                       <span
                         key={`normal-${i}`}
@@ -150,7 +150,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
                 {/* Botón */}
                 <a
                   href="#contacto"
-                  className="inline-flex items-center gap-2 bg-forma-pink text-forma-black px-8 py-3 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105"
+                  className="inline-flex items-center gap-2 bg-forma-pink text-forma-black px-10 py-4 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105"
                 >
                   {slide.button}
                   <span className="arrow-icon transition-transform duration-300">
@@ -163,7 +163,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
         </div>
 
         {/* Indicador de progreso */}
-        <div className="flex justify-center gap-3 mt-16">
+        <div className="flex justify-center gap-3 mt-24">
           {slides.map((_, idx) => (
             <button
               key={idx}
