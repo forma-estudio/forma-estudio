@@ -44,15 +44,15 @@ export default function HowWeWork() {
         </h2>
       </div>
 
-      <div className="relative overflow-hidden hover:pause-drift" onMouseEnter={(e) => e.currentTarget.classList.add('is-hovering')} onMouseLeave={(e) => e.currentTarget.classList.remove('is-hovering')}>
+      <div className="relative overflow-hidden px-4" onMouseEnter={(e) => e.currentTarget.classList.add('is-hovering')} onMouseLeave={(e) => e.currentTarget.classList.remove('is-hovering')}>
         <div className="flex gap-3 animate-drift" style={{ width: 'fit-content' }}>
           {steps.map((step, idx) => (
             <div
               key={`card-${step.number}`}
-              className={`flex-shrink-0 rounded-2xl p-8 bg-gradient-to-br ${gradients[idx]} flex flex-col text-white`}
+              className={`card-item flex-shrink-0 rounded-2xl p-8 bg-gradient-to-br ${gradients[idx]} flex flex-col text-white transition-transform duration-300 ease-out`}
               style={{
-                width: 'clamp(240px, 22vw, 340px)',
-                height: 'clamp(240px, 22vw, 340px)'
+                width: 'clamp(280px, 24vw, 380px)',
+                height: 'clamp(280px, 24vw, 380px)'
               }}
             >
               <div>
@@ -89,6 +89,14 @@ export default function HowWeWork() {
 
         .is-hovering .animate-drift {
           animation-play-state: paused;
+        }
+
+        .card-item:hover {
+          transform: scale(1.05);
+        }
+
+        .is-hovering .card-item:not(:hover) {
+          opacity: 0.85;
         }
       `}</style>
     </section>
