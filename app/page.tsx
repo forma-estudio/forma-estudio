@@ -1,7 +1,7 @@
 import Hero from '@/components/Hero'
 import Impact from '@/components/Impact'
 import HowWeWork from '@/components/HowWeWork'
-import OurServices from '@/components/OurServices'
+import ServiceCarousel from '@/components/ServiceCarousel'
 import Portfolio from '@/components/Portfolio'
 import AboutUs from '@/components/AboutUs'
 import Contact from '@/components/Contact'
@@ -14,7 +14,7 @@ export default function Home() {
       </div>
       <Impact />
       <HowWeWork />
-      <OurServices />
+      <ServiceCarousel />
       <div id="portafolio">
         <Portfolio />
       </div>
