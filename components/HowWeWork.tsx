@@ -45,11 +45,15 @@ export default function HowWeWork() {
       </div>
 
       <div className="relative overflow-hidden hover:pause-drift" onMouseEnter={(e) => e.currentTarget.classList.add('is-hovering')} onMouseLeave={(e) => e.currentTarget.classList.remove('is-hovering')}>
-        <div className="flex gap-4 animate-drift">
+        <div className="flex gap-3 animate-drift" style={{ width: 'fit-content' }}>
           {steps.map((step, idx) => (
             <div
               key={`card-${step.number}`}
-              className={`flex-shrink-0 w-96 h-96 rounded-2xl p-8 bg-gradient-to-br ${gradients[idx]} flex flex-col text-white`}
+              className={`flex-shrink-0 rounded-2xl p-8 bg-gradient-to-br ${gradients[idx]} flex flex-col text-white`}
+              style={{
+                width: 'clamp(240px, 22vw, 340px)',
+                height: 'clamp(240px, 22vw, 340px)'
+              }}
             >
               <div>
                 <div className="text-7xl font-bold mb-4">
@@ -75,7 +79,7 @@ export default function HowWeWork() {
             transform: translateX(0);
           }
           50% {
-            transform: translateX(-80px);
+            transform: translateX(-40px);
           }
         }
 
