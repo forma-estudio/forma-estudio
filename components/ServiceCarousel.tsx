@@ -11,17 +11,20 @@ export default function ServiceCarousel() {
   const slides = [
     {
       icon: 'monitor',
-      title: 'Menos ensayo y error, más soluciones',
+      normalWords: ['Menos', 'ensayo', 'y', 'error,'],
+      keywordWords: ['más', 'soluciones'],
       button: 'Solicitar vista previa'
     },
     {
       icon: 'palette',
-      title: 'Hacete notar, dejá marca',
+      normalWords: ['Hacete', 'notar,'],
+      keywordWords: ['dejá', 'marca'],
       button: 'Hacelo ahora'
     },
     {
       icon: 'signal',
-      title: 'Hacé que te vean, hacé presencia',
+      normalWords: ['Hacé', 'que', 'te', 'vean,'],
+      keywordWords: ['hacé', 'presencia'],
       button: 'Impulsá tu negocio'
     }
   ]
@@ -111,10 +114,29 @@ export default function ServiceCarousel() {
                   <Icon />
                 </div>
 
-                {/* Título */}
-                <h2 className="max-w-2xl text-4xl md:text-5xl font-bold leading-tight">
-                  {slide.title}
-                </h2>
+                {/* Título con animación reveal */}
+                <div key={currentSlide} className="max-w-2xl text-4xl md:text-5xl font-bold leading-tight text-white">
+                  {/* Palabras normales */}
+                  {slide.normalWords.map((word, i) => (
+                    <span
+                      key={`normal-${i}`}
+                      className="word-reveal inline-block"
+                      style={{ '--word-delay': `${i * 0.1}s` } as React.CSSProperties}
+                    >
+                      {word}{' '}
+                    </span>
+                  ))}
+                  {/* Palabra clave con glow */}
+                  {slide.keywordWords.map((word, i) => (
+                    <span
+                      key={`keyword-${i}`}
+                      className="keyword word-reveal inline-block"
+                      style={{ '--word-delay': `${(slide.normalWords.length + i) * 0.1}s` } as React.CSSProperties}
+                    >
+                      {word}{' '}
+                    </span>
+                  ))}
+                </div>
 
                 {/* Botón */}
                 <a
@@ -140,6 +162,43 @@ export default function ServiceCarousel() {
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes word-reveal {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes keyword-glow {
+          0%, 100% {
+            text-shadow: 0 0 10px rgba(185, 140, 232, 0.5);
+          }
+          50% {
+            text-shadow: 0 0 30px rgba(185, 140, 232, 1);
+          }
+        }
+
+        .word-reveal {
+          display: inline-block;
+          animation: word-reveal 0.6s ease-out forwards;
+          animation-delay: var(--word-delay, 0s);
+        }
+
+        .keyword {
+          color: #B98CE8;
+          font-weight: 400;
+        }
+
+        .keyword.word-reveal {
+          animation: word-reveal 0.6s ease-out forwards, keyword-glow 2.4s ease-in-out 0.6s infinite;
+        }
+      `}</style>
     </section>
   )
 }
