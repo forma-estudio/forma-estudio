@@ -92,6 +92,12 @@ export default function ServiceCarousel() {
     </svg>
   )
 
+  const ArrowIcon = () => (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M7 17L17 7M17 7H7M17 7V17" />
+    </svg>
+  )
+
   const icons = [MonitorIcon, PaletteIcon, SignalIcon]
   const Icon = icons[currentSlide]
 
@@ -145,9 +151,12 @@ export default function ServiceCarousel() {
                 {/* Botón */}
                 <a
                   href="#contacto"
-                  className="inline-block bg-forma-pink text-forma-black px-8 py-3 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105"
+                  className="inline-flex items-center gap-2 bg-forma-pink text-forma-black px-8 py-3 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105"
                 >
                   {slide.button}
+                  <span className="arrow-icon transition-transform duration-300">
+                    <ArrowIcon />
+                  </span>
                 </a>
               </div>
             ))}
@@ -202,6 +211,16 @@ export default function ServiceCarousel() {
 
         .keyword.word-reveal {
           animation: word-reveal 0.6s ease-out forwards, keyword-glow 2.4s ease-in-out 0.6s infinite;
+        }
+
+        .arrow-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        a:hover .arrow-icon {
+          transform: translate(2px, -2px);
         }
       `}</style>
     </section>
