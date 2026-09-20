@@ -1,0 +1,107 @@
+'use client'
+
+export default function HowWeWork() {
+  const steps = [
+    {
+      number: 1,
+      title: 'CONTANOS SOBRE TU NEGOCIO',
+      description: 'Envianos tu web actual o simplemente el nombre de tu negocio y tu ciudad. Eso es todo lo que necesitamos para empezar.'
+    },
+    {
+      number: 2,
+      title: 'REVISÁ UNA VISTA PREVIA FUNCIONAL',
+      description: 'Diseñamos una vista previa de tu nueva página de inicio: una página real que podés abrir en tu teléfono, no una presentación de diapositivas ni una propuesta.'
+    },
+    {
+      number: 3,
+      title: 'APROBÁ Y PERFECCIONÁ',
+      description: 'Decinos qué ajustes necesitás. Cuando esté perfecto, desarrollamos la web completa. Si no te convence, no tenés que pagar nada.'
+    },
+    {
+      number: 4,
+      title: 'LANZAMIENTO Y EL DESPUÉS',
+      description: 'Nos encargamos del dominio, el alojamiento y la puesta en marcha. A partir de ese momento, mantenemos el sitio web rápido, seguro y actualizado.'
+    }
+  ]
+
+  const gradients = [
+    'from-forma-black to-forma-purple',
+    'from-forma-purple to-forma-pink',
+    'from-forma-purple via-forma-pink to-forma-pink',
+    'from-forma-pink to-pink-300'
+  ]
+
+  return (
+    <section className="bg-forma-white py-16 px-6 overflow-hidden">
+      <div className="max-w-6xl mx-auto mb-12">
+        <div className="text-center mb-4">
+          <p className="text-forma-purple font-semibold text-sm tracking-widest uppercase">
+            Cómo trabajamos
+          </p>
+        </div>
+        <h2 className="text-5xl md:text-6xl font-bold text-forma-black text-center mb-12">
+          Un proceso sin riesgo inicial
+        </h2>
+      </div>
+
+      <div className="relative overflow-hidden">
+        <div className="flex gap-6 animate-marquee">
+          {/* Tarjetas originales */}
+          {steps.map((step, idx) => (
+            <div
+              key={`original-${step.number}`}
+              className={`flex-shrink-0 w-80 h-80 rounded-2xl p-8 bg-gradient-to-br ${gradients[idx]} flex flex-col justify-between text-white`}
+            >
+              <div>
+                <div className="text-5xl font-bold mb-6">
+                  #{step.number}
+                </div>
+                <h3 className="text-xl font-bold mb-4">
+                  {step.title}
+                </h3>
+              </div>
+              <p className="text-sm leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          ))}
+
+          {/* Tarjetas duplicadas para loop seamless */}
+          {steps.map((step, idx) => (
+            <div
+              key={`duplicate-${step.number}`}
+              className={`flex-shrink-0 w-80 h-80 rounded-2xl p-8 bg-gradient-to-br ${gradients[idx]} flex flex-col justify-between text-white`}
+            >
+              <div>
+                <div className="text-5xl font-bold mb-6">
+                  #{step.number}
+                </div>
+                <h3 className="text-xl font-bold mb-4">
+                  {step.title}
+                </h3>
+              </div>
+              <p className="text-sm leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-marquee {
+          animation: marquee 25s linear infinite;
+        }
+      `}</style>
+    </section>
+  )
+}
