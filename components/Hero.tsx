@@ -32,12 +32,6 @@ export default function Hero() {
           >
             Hablemos de tu proyecto
           </a>
-          <a
-            href="#portafolio"
-            className="border-2 border-forma-pink text-forma-pink px-8 py-4 rounded-full font-semibold hover:bg-forma-pink hover:text-forma-black transition-all transform hover:scale-105 inline-block"
-          >
-            Ver trabajos
-          </a>
         </div>
       </div>
     </section>
