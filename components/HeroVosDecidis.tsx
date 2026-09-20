@@ -8,9 +8,68 @@ export default function HeroVosDecidis() {
   )
 
   return (
-    <section className="dots-bg py-32 px-6 min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative py-32 px-6 min-h-screen flex items-center justify-center overflow-hidden" style={{ background: '#050208' }}>
+      {/* Malla animada SVG */}
+      <svg
+        viewBox="0 0 800 500"
+        preserveAspectRatio="xMidYMid slice"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 0,
+        }}
+      >
+        <defs>
+          <filter id="wavyGrid" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.008 0.015"
+              numOctaves="2"
+              seed="7"
+              result="noise"
+            >
+              <animate
+                attributeName="baseFrequency"
+                values="0.008 0.015;0.012 0.02;0.008 0.015"
+                dur="14s"
+                repeatCount="indefinite"
+              />
+            </feTurbulence>
+            <feDisplacementMap
+              in="SourceGraphic"
+              in2="noise"
+              scale="60"
+              xChannelSelector="R"
+              yChannelSelector="G"
+            />
+          </filter>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+            <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#B14CFF" strokeWidth="1.4" />
+          </pattern>
+        </defs>
+        <rect width="800" height="500" fill="#050208" />
+        <g filter="url(#wavyGrid)">
+          <rect
+            width="800"
+            height="500"
+            fill="url(#grid)"
+            filter="url(#glow)"
+            opacity="0.9"
+          />
+        </g>
+      </svg>
+
       {/* Contenido */}
-      <div className="max-w-5xl text-center w-full">
+      <div className="relative z-10 max-w-5xl text-center w-full">
         <div className="text-white space-y-8 flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Vos decidís si querés
@@ -39,38 +98,6 @@ export default function HeroVosDecidis() {
       </div>
 
       <style jsx>{`
-        .dots-bg {
-          position: relative;
-          background-color: #101820;
-          overflow: hidden;
-        }
-
-        .dots-bg::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background-image: radial-gradient(circle, #A855F7 2.5px, transparent 2.5px);
-          background-size: 22px 22px;
-          -webkit-mask-image: radial-gradient(ellipse 55% 65% at 50% 45%, black 0%, black 25%, rgba(0,0,0,0.5) 50%, transparent 80%);
-          mask-image: radial-gradient(ellipse 55% 65% at 50% 45%, black 0%, black 25%, rgba(0,0,0,0.5) 50%, transparent 80%);
-          pointer-events: none;
-        }
-
-        .dots-bg::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background-image: radial-gradient(circle, #6F2DA8 1.2px, transparent 1.2px);
-          background-size: 22px 22px;
-          opacity: 0.4;
-          pointer-events: none;
-        }
-
-        .dots-bg > * {
-          position: relative;
-          z-index: 1;
-        }
-
         .arrow-icon {
           display: inline-flex;
           align-items: center;
