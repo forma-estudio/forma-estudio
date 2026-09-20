@@ -5,30 +5,23 @@ import { useEffect, useRef, useState } from 'react'
 export default function ServiceCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
-  const [animateTitle, setAnimateTitle] = useState(false)
   const autoplayIntervalRef = useRef<NodeJS.Timeout | null>(null)
   const startXRef = useRef(0)
 
   const slides = [
     {
       icon: 'monitor',
-      title: ['Menos ensayo y error,', 'más soluciones'],
-      titleNormal: 'Menos ensayo y error,',
-      titleHighlight: 'más soluciones',
+      title: 'Menos ensayo y error, más soluciones',
       button: 'Solicitar vista previa'
     },
     {
       icon: 'palette',
-      title: ['Hacete notar,', 'dejá marca'],
-      titleNormal: 'Hacete notar,',
-      titleHighlight: 'dejá marca',
+      title: 'Hacete notar, dejá marca',
       button: 'Hacelo ahora'
     },
     {
       icon: 'signal',
-      title: ['Hacé que te vean,', 'hacé presencia'],
-      titleNormal: 'Hacé que te vean,',
-      titleHighlight: 'hacé presencia',
+      title: 'Hacé que te vean, hacé presencia',
       button: 'Impulsá tu negocio'
     }
   ]
@@ -40,11 +33,8 @@ export default function ServiceCarousel() {
       return
     }
 
-    setAnimateTitle(true)
-
     autoplayIntervalRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-      setAnimateTitle(true)
     }, 5500)
 
     return () => {
@@ -54,7 +44,6 @@ export default function ServiceCarousel() {
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index)
-    setAnimateTitle(true)
     if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current)
   }
 
@@ -104,7 +93,7 @@ export default function ServiceCarousel() {
   const Icon = icons[currentSlide]
 
   return (
-    <section id="servicios" className="bg-forma-black py-24 px-6 min-h-screen flex flex-col justify-center">
+    <section id="servicios" className="bg-forma-black py-24 px-6 min-h-screen flex flex-col justify-center" style={{ color: '#FFFFFF' }}>
       <div
         className="max-w-6xl mx-auto w-full overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
@@ -122,27 +111,10 @@ export default function ServiceCarousel() {
                   <Icon />
                 </div>
 
-                {/* Título con reveal */}
-                <div className="max-w-2xl">
-                  <div className={`text-4xl md:text-5xl font-bold leading-tight ${animateTitle && currentSlide === idx ? 'animate-word-reveal' : ''}`}>
-                    <div className="text-white">
-                      <span className="inline-block opacity-0" style={{ '--delay': '0s' } as React.CSSProperties}>
-                        {slide.titleNormal.split(' ').map((word, i) => (
-                          <span key={i} className="word-reveal inline-block" style={{ '--word-delay': `${i * 0.1}s` } as React.CSSProperties}>
-                            {word}{' '}
-                          </span>
-                        ))}
-                      </span>
-                    </div>
-                    <div className="text-forma-pink">
-                      <span className="inline-block opacity-0 font-light" style={{ '--delay': '0.2s' } as React.CSSProperties}>
-                        <span className="word-reveal inline-block animate-glow-infinite" style={{ '--word-delay': `${slide.titleNormal.split(' ').length * 0.1}s` } as React.CSSProperties}>
-                          {slide.titleHighlight}
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                {/* Título */}
+                <h2 className="max-w-2xl text-4xl md:text-5xl font-bold leading-tight">
+                  {slide.title}
+                </h2>
 
                 {/* Botón */}
                 <a
@@ -168,38 +140,6 @@ export default function ServiceCarousel() {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes word-reveal {
-          0% {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes glow-pulse {
-          0%, 100% {
-            text-shadow: 0 0 10px rgba(111, 45, 168, 0.5);
-          }
-          50% {
-            text-shadow: 0 0 30px rgba(111, 45, 168, 1);
-          }
-        }
-
-        .word-reveal {
-          display: inline-block;
-          animation: word-reveal 0.6s ease-out forwards;
-          animation-delay: var(--word-delay, 0s);
-        }
-
-        .animate-glow-infinite {
-          animation: glow-pulse 2.4s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   )
 }

@@ -16,6 +16,10 @@ html {
   scroll-margin-top: 80px;
 }
 
+#servicios, #como-trabajamos {
+  color: #FFFFFF;
+}
+
 body {
   background-color: #FFFFFF;
   color: #101820;
