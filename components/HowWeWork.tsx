@@ -45,7 +45,7 @@ export default function HowWeWork() {
       </div>
 
       <div className="relative overflow-hidden hover:pause-drift" onMouseEnter={(e) => e.currentTarget.classList.add('is-hovering')} onMouseLeave={(e) => e.currentTarget.classList.remove('is-hovering')}>
-        <div className="flex gap-6 animate-drift">
+        <div className="flex gap-4 animate-drift">
           {steps.map((step, idx) => (
             <div
               key={`card-${step.number}`}
@@ -75,7 +75,7 @@ export default function HowWeWork() {
             transform: translateX(0);
           }
           50% {
-            transform: translateX(-50px);
+            transform: translateX(-80px);
           }
         }
 
