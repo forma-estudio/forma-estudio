@@ -55,7 +55,7 @@ export default function Impact() {
       {/* Decorative @ glossy image - Left */}
       <div className="absolute -left-40 top-0 w-96 h-96 pointer-events-none z-0 hidden md:block overflow-hidden">
         <Image
-          src="/images/at-glossy.png"
+          src="/images/arroba.png"
           alt=""
           width={500}
           height={500}
@@ -68,7 +68,7 @@ export default function Impact() {
       {/* Decorative @ glossy image - Right */}
       <div className="absolute -right-40 top-1/3 w-96 h-96 pointer-events-none z-0 hidden md:block overflow-hidden" style={{ transform: 'scaleX(-1)' }}>
         <Image
-          src="/images/at-glossy.png"
+          src="/images/arroba.png"
           alt=""
           width={500}
           height={500}
