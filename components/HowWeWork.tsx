@@ -32,14 +32,14 @@ export default function HowWeWork() {
   ]
 
   return (
-    <section className="bg-forma-white py-16 px-6 overflow-hidden">
+    <section className="bg-forma-black py-16 px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto mb-12">
         <div className="text-center mb-4">
-          <p className="text-forma-purple font-semibold text-sm tracking-widest uppercase">
+          <p className="text-forma-pink font-semibold text-sm tracking-widest uppercase">
             Cómo trabajamos
           </p>
         </div>
-        <h2 className="text-5xl md:text-6xl font-bold text-forma-black text-center mb-12">
+        <h2 className="text-5xl md:text-6xl font-bold text-white text-center mb-12">
           Un proceso sin riesgo inicial
         </h2>
       </div>
