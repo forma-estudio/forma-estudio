@@ -197,6 +197,7 @@ export default function ServiceCarousel() {
         .keyword {
           color: #B98CE8;
           font-weight: 400;
+          text-transform: uppercase;
         }
 
         .keyword.word-reveal {
