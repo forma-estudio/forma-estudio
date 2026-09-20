@@ -16,18 +16,18 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-4">Enlaces</h4>
             <div className="flex flex-col gap-3 text-gray-300">
-              <Link href="/servicios" className="hover:text-forma-pink transition">
+              <a href="#servicios" className="hover:text-forma-pink transition">
                 Servicios
-              </Link>
-              <Link href="/portafolio" className="hover:text-forma-pink transition">
-                Portafolio
-              </Link>
-              <Link href="/sobre-nosotros" className="hover:text-forma-pink transition">
+              </a>
+              <a href="#como-trabajamos" className="hover:text-forma-pink transition">
+                Proceso
+              </a>
+              <a href="#sobre-nosotros" className="hover:text-forma-pink transition">
                 Sobre Nosotros
-              </Link>
-              <Link href="/contacto" className="hover:text-forma-pink transition">
+              </a>
+              <a href="#contacto" className="hover:text-forma-pink transition">
                 Contacto
-              </Link>
+              </a>
             </div>
           </div>
           <div>

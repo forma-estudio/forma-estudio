@@ -10,7 +10,7 @@ export default function Header() {
         <div className="flex gap-8">
           <a href="#hero" className="hover:text-forma-pink transition">Home</a>
           <a href="#servicios" className="hover:text-forma-pink transition">Servicios</a>
-          <a href="#portafolio" className="hover:text-forma-pink transition">Portafolio</a>
+          <a href="#como-trabajamos" className="hover:text-forma-pink transition">Proceso</a>
           <a href="#sobre-nosotros" className="hover:text-forma-pink transition">Sobre Nosotros</a>
           <a href="#contacto" className="hover:text-forma-pink transition">Contacto</a>
         </div>

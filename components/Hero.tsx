@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import AnimatedText from './AnimatedText'
 
 export default function Hero() {
@@ -27,18 +26,18 @@ export default function Hero() {
           Nosotros nos encargamos.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/contacto"
-            className="bg-forma-pink text-forma-black px-8 py-4 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105"
+          <a
+            href="#contacto"
+            className="bg-forma-pink text-forma-black px-8 py-4 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105 inline-block"
           >
             Hablemos de tu proyecto
-          </Link>
-          <Link
-            href="/portafolio"
-            className="border-2 border-forma-pink text-forma-pink px-8 py-4 rounded-full font-semibold hover:bg-forma-pink hover:text-forma-black transition-all transform hover:scale-105"
+          </a>
+          <a
+            href="#portafolio"
+            className="border-2 border-forma-pink text-forma-pink px-8 py-4 rounded-full font-semibold hover:bg-forma-pink hover:text-forma-black transition-all transform hover:scale-105 inline-block"
           >
             Ver trabajos
-          </Link>
+          </a>
         </div>
       </div>
     </section>

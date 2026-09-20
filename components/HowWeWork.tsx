@@ -32,7 +32,7 @@ export default function HowWeWork() {
   ]
 
   return (
-    <section className="bg-forma-black py-16 px-6 overflow-hidden">
+    <section id="como-trabajamos" className="bg-forma-black py-16 px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto mb-12">
         <div className="text-center mb-4">
           <p className="text-forma-pink font-semibold text-sm tracking-widest uppercase">
