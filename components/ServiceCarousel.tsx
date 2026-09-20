@@ -118,11 +118,11 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
         <div className="relative">
           <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {slides.map((slide, idx) => (
-              <div key={idx} className="w-full flex-shrink-0 flex flex-col items-center justify-between text-center py-24" style={{ minHeight: '100vh' }}>
+              <div key={idx} className="w-full flex-shrink-0 flex flex-col items-center justify-between text-center" style={{ height: '85vh', paddingTop: '40px', paddingBottom: '40px' }}>
                 {/* Título con animación reveal */}
-                <div key={currentSlide} className="max-w-3xl" style={{ display: 'flex', flexDirection: 'column', gap: '70px' }}>
+                <div key={currentSlide} className="max-w-3xl" style={{ display: 'flex', flexDirection: 'column', gap: '36px', lineHeight: '1.4' }}>
                   {/* Palabras normales */}
-                  <div className="text-5xl md:text-6xl font-bold leading-tight text-white flex flex-wrap gap-2">
+                  <div className="text-6xl md:text-7xl lg:text-8xl font-bold text-white flex flex-wrap gap-2">
                     {slide.normalWords.map((word, i) => (
                       <span
                         key={`normal-${i}`}
@@ -134,7 +134,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
                     ))}
                   </div>
                   {/* Palabra clave con glow - más grande y en línea separada */}
-                  <div className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight flex flex-wrap gap-2">
+                  <div className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight flex flex-wrap gap-2">
                     {slide.keywordWords.map((word, i) => (
                       <span
                         key={`keyword-${i}`}
@@ -148,7 +148,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
                 </div>
 
                 {/* Botón e Indicador agrupados al final */}
-                <div className="flex flex-col items-center gap-12" style={{ paddingBottom: '60px' }}>
+                <div className="flex flex-col items-center" style={{ gap: '24px', paddingBottom: '60px' }}>
                   <a
                     href="#contacto"
                     className="inline-flex items-center gap-2 bg-forma-pink text-forma-black px-10 py-4 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105"
