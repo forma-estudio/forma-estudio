@@ -115,27 +115,31 @@ export default function ServiceCarousel() {
                 </div>
 
                 {/* Título con animación reveal */}
-                <div key={currentSlide} className="max-w-2xl text-4xl md:text-5xl font-bold leading-tight text-white">
+                <div key={currentSlide} className="max-w-3xl space-y-2">
                   {/* Palabras normales */}
-                  {slide.normalWords.map((word, i) => (
-                    <span
-                      key={`normal-${i}`}
-                      className="word-reveal inline-block"
-                      style={{ '--word-delay': `${i * 0.1}s` } as React.CSSProperties}
-                    >
-                      {word}{' '}
-                    </span>
-                  ))}
-                  {/* Palabra clave con glow */}
-                  {slide.keywordWords.map((word, i) => (
-                    <span
-                      key={`keyword-${i}`}
-                      className="keyword word-reveal inline-block"
-                      style={{ '--word-delay': `${(slide.normalWords.length + i) * 0.1}s` } as React.CSSProperties}
-                    >
-                      {word}{' '}
-                    </span>
-                  ))}
+                  <div className="text-4xl md:text-5xl font-bold leading-tight text-white flex flex-wrap gap-2">
+                    {slide.normalWords.map((word, i) => (
+                      <span
+                        key={`normal-${i}`}
+                        className="word-reveal inline-block"
+                        style={{ '--word-delay': `${i * 0.1}s` } as React.CSSProperties}
+                      >
+                        {word}
+                      </span>
+                    ))}
+                  </div>
+                  {/* Palabra clave con glow - más grande y en línea separada */}
+                  <div className="text-5xl md:text-6xl lg:text-7xl font-light leading-tight flex flex-wrap gap-2">
+                    {slide.keywordWords.map((word, i) => (
+                      <span
+                        key={`keyword-${i}`}
+                        className="keyword word-reveal inline-block"
+                        style={{ '--word-delay': `${(slide.normalWords.length + i) * 0.1}s` } as React.CSSProperties}
+                      >
+                        {word}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Botón */}
