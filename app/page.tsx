@@ -3,15 +3,25 @@ import Impact from '@/components/Impact'
 import HowWeWork from '@/components/HowWeWork'
 import Services from '@/components/Services'
 import Portfolio from '@/components/Portfolio'
+import AboutUs from '@/components/AboutUs'
+import Contact from '@/components/Contact'
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      <div id="hero">
+        <Hero />
+      </div>
       <Impact />
       <HowWeWork />
-      <Services />
-      <Portfolio />
+      <div id="servicios">
+        <Services />
+      </div>
+      <div id="portafolio">
+        <Portfolio />
+      </div>
+      <AboutUs />
+      <Contact />
     </>
   )
 }
