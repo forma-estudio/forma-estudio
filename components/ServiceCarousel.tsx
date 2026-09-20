@@ -119,11 +119,6 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
           <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {slides.map((slide, idx) => (
               <div key={idx} className="w-full flex-shrink-0 flex flex-col items-center justify-center text-center space-y-12 py-12">
-                {/* Ícono */}
-                <div className="text-forma-pink">
-                  <Icon />
-                </div>
-
                 {/* Título con animación reveal */}
                 <div key={currentSlide} className="max-w-3xl space-y-2">
                   {/* Palabras normales */}
@@ -139,7 +134,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
                     ))}
                   </div>
                   {/* Palabra clave con glow - más grande y en línea separada */}
-                  <div className="text-5xl md:text-6xl lg:text-7xl font-light leading-tight flex flex-wrap gap-2">
+                  <div className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight flex flex-wrap gap-2">
                     {slide.keywordWords.map((word, i) => (
                       <span
                         key={`keyword-${i}`}
@@ -194,10 +189,10 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
 
         @keyframes keyword-glow {
           0%, 100% {
-            text-shadow: 0 0 10px rgba(185, 140, 232, 0.5);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
           }
           50% {
-            text-shadow: 0 0 30px rgba(185, 140, 232, 1);
+            text-shadow: 0 0 30px rgba(255, 255, 255, 1);
           }
         }
 
@@ -208,8 +203,8 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
         }
 
         .keyword {
-          color: #B98CE8;
-          font-weight: 400;
+          color: #FFFFFF;
+          font-weight: 700;
           text-transform: uppercase;
         }
 
