@@ -99,7 +99,7 @@ export default function Impact() {
           {/* Right Column - Cards */}
           <div className="space-y-6">
             {/* Card 1 - Largest */}
-            <div className="border border-forma-purple rounded-3xl p-10 bg-white text-center">
+            <div className="border border-forma-purple rounded-3xl p-10 bg-transparent text-center">
               <div className="text-6xl md:text-7xl font-bold text-forma-purple mb-4">
                 +{count500}
               </div>
@@ -107,7 +107,7 @@ export default function Impact() {
             </div>
 
             {/* Card 2 - Medium */}
-            <div className="border border-forma-purple rounded-3xl p-7 bg-white text-center">
+            <div className="border border-forma-purple rounded-3xl p-7 bg-transparent text-center">
               <div className="text-4xl md:text-5xl font-bold text-forma-purple mb-3">
                 +{count10}
               </div>
