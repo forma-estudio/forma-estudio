@@ -49,7 +49,7 @@ export default function HowWeWork() {
           {steps.map((step, idx) => (
             <div
               key={`card-${step.number}`}
-              className={`flex-shrink-0 w-96 h-96 rounded-2xl p-8 bg-gradient-to-br ${gradients[idx]} flex flex-col justify-between text-white`}
+              className={`flex-shrink-0 w-96 h-96 rounded-2xl p-8 bg-gradient-to-br ${gradients[idx]} flex flex-col text-white`}
             >
               <div>
                 <div className="text-7xl font-bold mb-4">
@@ -59,9 +59,11 @@ export default function HowWeWork() {
                   {step.title}
                 </h3>
               </div>
-              <p className="text-base leading-relaxed">
-                {step.description}
-              </p>
+              <div className="flex-1 flex items-center justify-center">
+                <p className="text-base leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
