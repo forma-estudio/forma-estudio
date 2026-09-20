@@ -118,9 +118,9 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
         <div className="relative">
           <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {slides.map((slide, idx) => (
-              <div key={idx} className="w-full flex-shrink-0 flex flex-col items-center justify-center text-center py-24" style={{ gap: '240px' }}>
+              <div key={idx} className="w-full flex-shrink-0 flex flex-col items-center justify-between text-center py-24" style={{ minHeight: '100vh' }}>
                 {/* Título con animación reveal */}
-                <div key={currentSlide} className="max-w-3xl" style={{ display: 'flex', flexDirection: 'column', gap: '160px' }}>
+                <div key={currentSlide} className="max-w-3xl" style={{ display: 'flex', flexDirection: 'column', gap: '70px' }}>
                   {/* Palabras normales */}
                   <div className="text-5xl md:text-6xl font-bold leading-tight text-white flex flex-wrap gap-2">
                     {slide.normalWords.map((word, i) => (
@@ -147,31 +147,33 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
                   </div>
                 </div>
 
-                {/* Botón */}
-                <a
-                  href="#contacto"
-                  className="inline-flex items-center gap-2 bg-forma-pink text-forma-black px-10 py-4 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105"
-                >
-                  {slide.button}
-                  <span className="arrow-icon transition-transform duration-300">
-                    <ArrowIcon />
-                  </span>
-                </a>
+                {/* Botón e Indicador agrupados al final */}
+                <div className="flex flex-col items-center gap-12" style={{ paddingBottom: '60px' }}>
+                  <a
+                    href="#contacto"
+                    className="inline-flex items-center gap-2 bg-forma-pink text-forma-black px-10 py-4 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105"
+                  >
+                    {slide.button}
+                    <span className="arrow-icon transition-transform duration-300">
+                      <ArrowIcon />
+                    </span>
+                  </a>
+
+                  {/* Indicador de progreso */}
+                  <div className="flex justify-center gap-3">
+                    {slides.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => goToSlide(idx)}
+                        className={`transition-all duration-300 ${idx === currentSlide ? 'w-8 h-2 bg-forma-pink rounded-full' : 'w-2 h-2 bg-gray-600 rounded-full'}`}
+                        aria-label={`Go to slide ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Indicador de progreso */}
-        <div className="flex justify-center gap-3" style={{ marginTop: '240px' }}>
-          {slides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => goToSlide(idx)}
-              className={`transition-all duration-300 ${idx === currentSlide ? 'w-8 h-2 bg-forma-pink rounded-full' : 'w-2 h-2 bg-gray-600 rounded-full'}`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
         </div>
       </div>
 
