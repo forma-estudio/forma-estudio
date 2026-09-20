@@ -120,9 +120,9 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
             {slides.map((slide, idx) => (
               <div key={idx} className="w-full flex-shrink-0 flex flex-col items-center justify-between text-center" style={{ height: '85vh', paddingTop: '40px', paddingBottom: '40px' }}>
                 {/* Título con animación reveal */}
-                <div key={currentSlide} className="max-w-3xl" style={{ display: 'flex', flexDirection: 'column', gap: '36px', lineHeight: '1.4' }}>
+                <div key={currentSlide} className="max-w-3xl" style={{ display: 'flex', flexDirection: 'column', gap: '28px', lineHeight: '1.2' }}>
                   {/* Palabras normales */}
-                  <div className="text-6xl md:text-7xl lg:text-8xl font-bold text-white flex flex-wrap gap-2">
+                  <div className="font-bold text-white flex flex-wrap gap-2" style={{ fontSize: 'clamp(28px, 5vw, 56px)', whiteSpace: 'nowrap' }}>
                     {slide.normalWords.map((word, i) => (
                       <span
                         key={`normal-${i}`}
@@ -134,7 +134,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
                     ))}
                   </div>
                   {/* Palabra clave con glow - más grande y en línea separada */}
-                  <div className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight flex flex-wrap gap-2">
+                  <div className="font-bold leading-tight flex flex-wrap gap-2" style={{ fontSize: 'clamp(32px, 6vw, 68px)', whiteSpace: 'nowrap' }}>
                     {slide.keywordWords.map((word, i) => (
                       <span
                         key={`keyword-${i}`}
