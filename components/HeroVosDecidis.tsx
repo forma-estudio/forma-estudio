@@ -8,20 +8,9 @@ export default function HeroVosDecidis() {
   )
 
   return (
-    <section className="relative py-32 px-6 min-h-screen flex items-center justify-center overflow-hidden" style={{ background: '#6F2DA8' }}>
-      {/* Fondo de lunares con degradé de intensidad */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(circle, rgba(255, 255, 255, 0.28) 3.5px, transparent 3.5px)',
-          backgroundSize: '32px 32px',
-          maskImage: 'radial-gradient(circle at center, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
-          WebkitMaskImage: 'radial-gradient(circle at center, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
-        }}
-      />
-
+    <section className="dots-bg py-32 px-6 min-h-screen flex items-center justify-center overflow-hidden">
       {/* Contenido */}
-      <div className="relative z-10 max-w-5xl text-center w-full">
+      <div className="max-w-5xl text-center w-full">
         <div className="text-white space-y-8 flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Vos decidís si querés
@@ -50,6 +39,28 @@ export default function HeroVosDecidis() {
       </div>
 
       <style jsx>{`
+        .dots-bg {
+          position: relative;
+          background-color: #101820;
+        }
+
+        .dots-bg::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-image: radial-gradient(circle, #8B2FD9 2.5px, transparent 2.5px);
+          background-size: 22px 22px;
+          opacity: 0.9;
+          -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 75%);
+          mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 75%);
+          pointer-events: none;
+        }
+
+        .dots-bg > * {
+          position: relative;
+          z-index: 1;
+        }
+
         .arrow-icon {
           display: inline-flex;
           align-items: center;
