@@ -44,32 +44,11 @@ export default function HowWeWork() {
         </h2>
       </div>
 
-      <div className="relative overflow-hidden">
-        <div className="flex gap-6 animate-marquee">
-          {/* Tarjetas originales */}
+      <div className="relative overflow-hidden hover:pause-drift" onMouseEnter={(e) => e.currentTarget.classList.add('is-hovering')} onMouseLeave={(e) => e.currentTarget.classList.remove('is-hovering')}>
+        <div className="flex gap-6 animate-drift">
           {steps.map((step, idx) => (
             <div
-              key={`original-${step.number}`}
-              className={`flex-shrink-0 w-80 h-80 rounded-2xl p-8 bg-gradient-to-br ${gradients[idx]} flex flex-col justify-between text-white`}
-            >
-              <div>
-                <div className="text-5xl font-bold mb-6">
-                  #{step.number}
-                </div>
-                <h3 className="text-xl font-bold mb-4">
-                  {step.title}
-                </h3>
-              </div>
-              <p className="text-sm leading-relaxed">
-                {step.description}
-              </p>
-            </div>
-          ))}
-
-          {/* Tarjetas duplicadas para loop seamless */}
-          {steps.map((step, idx) => (
-            <div
-              key={`duplicate-${step.number}`}
+              key={`card-${step.number}`}
               className={`flex-shrink-0 w-80 h-80 rounded-2xl p-8 bg-gradient-to-br ${gradients[idx]} flex flex-col justify-between text-white`}
             >
               <div>
@@ -89,17 +68,21 @@ export default function HowWeWork() {
       </div>
 
       <style jsx>{`
-        @keyframes marquee {
-          0% {
+        @keyframes drift {
+          0%, 100% {
             transform: translateX(0);
           }
-          100% {
-            transform: translateX(-50%);
+          50% {
+            transform: translateX(-50px);
           }
         }
 
-        .animate-marquee {
-          animation: marquee 25s linear infinite;
+        .animate-drift {
+          animation: drift 9s ease-in-out infinite;
+        }
+
+        .is-hovering .animate-drift {
+          animation-play-state: paused;
         }
       `}</style>
     </section>

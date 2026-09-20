@@ -125,12 +125,6 @@ export default function Impact() {
           </div>
         </div>
       </div>
-
-      <div className="max-w-6xl mx-auto relative z-10 mt-20 mb-12">
-        <h3 className="text-5xl md:text-6xl font-bold text-forma-black text-center whitespace-normal md:whitespace-nowrap leading-tight">
-          Diseño que crea soluciones
-        </h3>
-      </div>
     </section>
   )
 }
