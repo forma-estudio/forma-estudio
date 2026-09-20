@@ -42,17 +42,27 @@ export default function HeroVosDecidis() {
         .dots-bg {
           position: relative;
           background-color: #101820;
+          overflow: hidden;
         }
 
         .dots-bg::before {
           content: "";
           position: absolute;
           inset: 0;
-          background-image: radial-gradient(circle, #8B2FD9 2.5px, transparent 2.5px);
+          background-image: radial-gradient(circle, #A855F7 2.5px, transparent 2.5px);
           background-size: 22px 22px;
-          opacity: 0.9;
-          -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 75%);
-          mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 75%);
+          -webkit-mask-image: radial-gradient(ellipse 55% 65% at 50% 45%, black 0%, black 25%, rgba(0,0,0,0.5) 50%, transparent 80%);
+          mask-image: radial-gradient(ellipse 55% 65% at 50% 45%, black 0%, black 25%, rgba(0,0,0,0.5) 50%, transparent 80%);
+          pointer-events: none;
+        }
+
+        .dots-bg::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-image: radial-gradient(circle, #6F2DA8 1.2px, transparent 1.2px);
+          background-size: 22px 22px;
+          opacity: 0.4;
           pointer-events: none;
         }
 
