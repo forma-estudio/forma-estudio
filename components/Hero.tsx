@@ -12,8 +12,8 @@ export default function Hero() {
         <div className="inline-block border-2 border-forma-pink text-forma-pink rounded-full px-6 py-3 text-base font-bold mb-8 bg-forma-pink/5">
           Estudio de diseño web
         </div>
-        <div className="mb-6">
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight whitespace-nowrap">
+        <div className="mb-6 flex justify-center">
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight md:whitespace-nowrap">
             Llevamos tu visión más allá
           </h1>
           <div className="text-5xl md:text-7xl font-bold leading-tight mt-3">
