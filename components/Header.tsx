@@ -1,11 +1,12 @@
 import Link from 'next/link'
+import Logo from './Logo'
 
 export default function Header() {
   return (
     <header className="fixed w-full top-0 z-50 bg-forma-black text-forma-white shadow-lg">
       <nav className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-        <a href="#hero" className="text-2xl font-bold bg-gradient-to-r from-forma-purple to-forma-pink bg-clip-text text-transparent hover:opacity-80 transition">
-          FORMA
+        <a href="#hero" className="h-12 flex items-center hover:opacity-80 transition">
+          <Logo />
         </a>
         <div className="flex gap-8">
           <a href="#hero" className="hover:text-forma-pink transition">Home</a>
