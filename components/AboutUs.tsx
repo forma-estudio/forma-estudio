@@ -30,7 +30,15 @@ export default function AboutUs() {
     if (!button) return
 
     const handleMouseEnter = () => setShowFAQ(true)
-    const handleMouseLeave = () => setShowFAQ(false)
+    const handleMouseLeave = (e: MouseEvent) => {
+      // Cerrar solo si el cursor se aleja completamente
+      setTimeout(() => {
+        const tooltip = button.querySelector('[data-faq-tooltip]')
+        if (tooltip && !tooltip.matches(':hover') && !button.matches(':hover')) {
+          setShowFAQ(false)
+        }
+      }, 10)
+    }
     const handleClick = () => setShowFAQ(!showFAQ)
 
     button.addEventListener('mouseenter', handleMouseEnter)
@@ -157,13 +165,18 @@ export default function AboutUs() {
             {/* Tooltip FAQ */}
             {showFAQ && (
               <div
-                className="absolute top-full mt-4 left-0 bg-forma-pink text-forma-black rounded-lg p-6 shadow-lg z-20"
+                data-faq-tooltip
+                className="absolute bg-forma-pink text-forma-black rounded-lg p-6 shadow-lg z-20"
                 style={{
+                  left: '100%',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  marginLeft: '24px',
                   width: '360px',
-                  maxHeight: '400px',
+                  maxHeight: '90vh',
                   overflowY: 'auto',
                   opacity: showFAQ ? 1 : 0,
-                  transform: showFAQ ? 'scale(1)' : 'scale(0.95)',
+                  pointerEvents: 'auto',
                   transition: 'all 0.3s ease-out'
                 }}
               >
