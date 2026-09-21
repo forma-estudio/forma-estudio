@@ -23,20 +23,8 @@ export default function AboutUs() {
     return () => section.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
-  const Globe1 = () => (
-    <svg viewBox="0 0 200 200" className="absolute" style={{
-      right: '-60px',
-      top: '20%',
-      width: '320px',
-      height: '320px',
-      opacity: 0.5,
-      zIndex: 0,
-      pointerEvents: 'none',
-      filter: 'drop-shadow(0 0 12px rgba(139,47,217,0.5))',
-      animation: 'spin 40s linear infinite',
-      transform: `translate(${mousePos.x * 60}px, ${mousePos.y * 60}px)`,
-      transition: 'transform 0.15s ease-out'
-    }}>
+  const Globe1SVG = () => (
+    <svg viewBox="0 0 200 200" style={{ width: '100%', height: '100%' }}>
       <circle cx="100" cy="100" r="90" fill="none" stroke="#B98CE8" strokeWidth="1.2"/>
       <ellipse cx="100" cy="100" rx="90" ry="90" fill="none" stroke="#8B2FD9" strokeWidth="1"/>
       <ellipse cx="100" cy="100" rx="65" ry="90" fill="none" stroke="#8B2FD9" strokeWidth="1"/>
@@ -48,20 +36,8 @@ export default function AboutUs() {
     </svg>
   )
 
-  const Globe2 = () => (
-    <svg viewBox="0 0 200 200" className="absolute" style={{
-      left: '-40px',
-      bottom: '10%',
-      width: '200px',
-      height: '200px',
-      opacity: 0.5,
-      zIndex: 0,
-      pointerEvents: 'none',
-      filter: 'drop-shadow(0 0 12px rgba(139,47,217,0.5))',
-      animation: 'spin 55s linear infinite reverse',
-      transform: `translate(${mousePos.x * -40}px, ${mousePos.y * -40}px)`,
-      transition: 'transform 0.15s ease-out'
-    }}>
+  const Globe2SVG = () => (
+    <svg viewBox="0 0 200 200" style={{ width: '100%', height: '100%' }}>
       <circle cx="100" cy="100" r="90" fill="none" stroke="#B98CE8" strokeWidth="1.2"/>
       <ellipse cx="100" cy="100" rx="90" ry="90" fill="none" stroke="#8B2FD9" strokeWidth="1"/>
       <ellipse cx="100" cy="100" rx="55" ry="90" fill="none" stroke="#8B2FD9" strokeWidth="1"/>
@@ -78,9 +54,59 @@ export default function AboutUs() {
       className="relative min-h-screen pt-32 pb-20 px-6 overflow-hidden"
       style={{ backgroundColor: '#101820' }}
     >
-      {/* Globos de fondo */}
-      <Globe1 />
-      <Globe2 />
+      {/* GLOBO 1: Parallax wrapper (translate) + Inner rotator */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          right: '-60px',
+          top: '20%',
+          width: '320px',
+          height: '320px',
+          zIndex: 0,
+          transform: `translate(${mousePos.x * 60}px, ${mousePos.y * 60}px)`,
+          transition: 'transform 0.15s ease-out'
+        }}
+      >
+        <div
+          className="globe-spin-1"
+          style={{
+            width: '100%',
+            height: '100%',
+            opacity: 0.5,
+            filter: 'drop-shadow(0 0 12px rgba(139,47,217,0.5))',
+            pointerEvents: 'none'
+          }}
+        >
+          <Globe1SVG />
+        </div>
+      </div>
+
+      {/* GLOBO 2: Parallax wrapper (translate) + Inner rotator */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          left: '-40px',
+          bottom: '10%',
+          width: '200px',
+          height: '200px',
+          zIndex: 0,
+          transform: `translate(${mousePos.x * -40}px, ${mousePos.y * -40}px)`,
+          transition: 'transform 0.15s ease-out'
+        }}
+      >
+        <div
+          className="globe-spin-2"
+          style={{
+            width: '100%',
+            height: '100%',
+            opacity: 0.5,
+            filter: 'drop-shadow(0 0 12px rgba(139,47,217,0.5))',
+            pointerEvents: 'none'
+          }}
+        >
+          <Globe2SVG />
+        </div>
+      </div>
 
       {/* Contenido */}
       <div className="max-w-3xl mx-auto relative z-10">
@@ -107,6 +133,14 @@ export default function AboutUs() {
           to {
             transform: rotate(360deg);
           }
+        }
+
+        .globe-spin-1 {
+          animation: spin 40s linear infinite;
+        }
+
+        .globe-spin-2 {
+          animation: spin 55s linear infinite reverse;
         }
 
         section {
