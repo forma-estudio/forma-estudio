@@ -8,8 +8,8 @@ export default function Contact() {
         </p>
         <div className="space-y-4">
           <p className="text-lg">
-            <a href="mailto:contacto@forma-estudio.com" className="text-forma-pink hover:text-forma-purple transition">
-              contacto@forma-estudio.com
+            <a href="mailto:formawebok@gmail.com" className="text-forma-pink hover:text-forma-purple transition">
+              formawebok@gmail.com
             </a>
           </p>
           <p className="text-lg text-gray-400">
