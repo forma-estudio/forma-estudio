@@ -4,7 +4,9 @@ import { useRef, useState, useEffect } from 'react'
 
 export default function AboutUs() {
   const sectionRef = useRef<HTMLDivElement>(null)
+  const faqButtonRef = useRef<HTMLDivElement>(null)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+  const [showFAQ, setShowFAQ] = useState(false)
 
   useEffect(() => {
     const section = sectionRef.current
@@ -22,6 +24,25 @@ export default function AboutUs() {
     section.addEventListener('mousemove', handleMouseMove)
     return () => section.removeEventListener('mousemove', handleMouseMove)
   }, [])
+
+  useEffect(() => {
+    const button = faqButtonRef.current
+    if (!button) return
+
+    const handleMouseEnter = () => setShowFAQ(true)
+    const handleMouseLeave = () => setShowFAQ(false)
+    const handleClick = () => setShowFAQ(!showFAQ)
+
+    button.addEventListener('mouseenter', handleMouseEnter)
+    button.addEventListener('mouseleave', handleMouseLeave)
+    button.addEventListener('click', handleClick)
+
+    return () => {
+      button.removeEventListener('mouseenter', handleMouseEnter)
+      button.removeEventListener('mouseleave', handleMouseLeave)
+      button.removeEventListener('click', handleClick)
+    }
+  }, [showFAQ])
 
   const Globe1SVG = () => (
     <svg viewBox="0 0 200 200" style={{ width: '100%', height: '100%' }}>
@@ -122,6 +143,51 @@ export default function AboutUs() {
           <p>
             No hacemos sitios web genéricos: cada proyecto es único, como tu empresa. Nos encargamos de todo: desde el concepto y diseño, hasta el desarrollo, lanzamiento y mantenimiento. Cuando trabajás con nosotros, trabajás con gente que entiende tus preocupaciones y las convierte en oportunidades.
           </p>
+
+          {/* Botón FAQ */}
+          <div className="mt-12 relative inline-block">
+            <div
+              ref={faqButtonRef}
+              className="inline-flex items-center gap-2 bg-forma-pink text-forma-black px-8 py-4 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105 cursor-pointer"
+              style={{ userSelect: 'none' }}
+            >
+              PREGUNTAS FRECUENTES
+            </div>
+
+            {/* Tooltip FAQ */}
+            {showFAQ && (
+              <div
+                className="absolute top-full mt-4 left-0 bg-forma-pink text-forma-black rounded-lg p-6 shadow-lg z-20"
+                style={{
+                  width: '360px',
+                  maxHeight: '400px',
+                  overflowY: 'auto',
+                  opacity: showFAQ ? 1 : 0,
+                  transform: showFAQ ? 'scale(1)' : 'scale(0.95)',
+                  transition: 'all 0.3s ease-out'
+                }}
+              >
+                <div className="space-y-4">
+                  <div>
+                    <p className="font-bold">¿Cuánto tarda un proyecto?</p>
+                    <p className="text-sm mt-1">Depende del alcance, pero la vista previa funcional la tenés en pocos días. El desarrollo completo suele tomar entre 2 y 4 semanas.</p>
+                  </div>
+                  <div>
+                    <p className="font-bold">¿Qué pasa si no me gusta el resultado?</p>
+                    <p className="text-sm mt-1">No pagás nada. Te mostramos una vista previa real antes de cobrarte un solo peso — si no te convence, ahí termina, sin compromiso.</p>
+                  </div>
+                  <div>
+                    <p className="font-bold">¿Ofrecen mantenimiento después del lanzamiento?</p>
+                    <p className="text-sm mt-1">Sí. Nos encargamos del dominio, el alojamiento y mantenemos tu sitio rápido, seguro y actualizado.</p>
+                  </div>
+                  <div>
+                    <p className="font-bold">¿Trabajan con negocios de cualquier rubro?</p>
+                    <p className="text-sm mt-1">Sí, trabajamos con PyMEs, profesionales y comercios locales de cualquier rubro que quieran mejorar su presencia digital.</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
