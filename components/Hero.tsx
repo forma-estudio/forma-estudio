@@ -13,22 +13,22 @@ export default function Hero() {
           Estudio de diseño web
         </div>
         <div className="mb-6 flex flex-col items-center">
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight md:whitespace-nowrap">
+          <h1 className="text-lg sm:text-2xl md:text-7xl font-bold leading-tight md:whitespace-nowrap">
             Llevamos tu visión más allá
           </h1>
-          <div className="text-5xl md:text-7xl font-bold leading-tight mt-3">
+          <div className="text-lg sm:text-2xl md:text-7xl font-bold leading-tight mt-4 inline-block min-h-8 md:inline md:min-h-0">
             <AnimatedText />
           </div>
         </div>
-        <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
           Diseñamos, desarrollamos y gestionamos tu página web, tu lugar.<br />
           Para empresas, profesionales y negocios locales.<br />
           Nosotros nos encargamos.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col gap-3 justify-center w-full px-0 md:px-6">
           <a
             href="#contacto"
-            className="bg-forma-pink text-forma-black px-8 py-4 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105 inline-block"
+            className="w-full md:w-auto bg-forma-pink text-forma-black px-8 py-3 md:py-4 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105 inline-flex items-center justify-center min-h-12 text-center"
           >
             Hablemos de tu proyecto
           </a>

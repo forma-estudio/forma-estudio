@@ -64,10 +64,10 @@ export default function AnimatedText() {
   }, [charIndex, phase, currentPhrase])
 
   return (
-    <span className="inline-block text-forma-pink">
+    <span className="inline text-forma-pink whitespace-nowrap">
       {displayedText}
       {phase !== 'deleting' && (
-        <span className={`${showCursor ? 'opacity-100' : 'opacity-0'}`}>|</span>
+        <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} ml-1`}>|</span>
       )}
     </span>
   )
