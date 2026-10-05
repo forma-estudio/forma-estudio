@@ -13,10 +13,10 @@ export default function Hero() {
           Estudio de diseño web
         </div>
         <div className="mb-6 flex flex-col items-center">
-          <h1 className="text-lg sm:text-2xl md:text-7xl font-bold leading-tight md:whitespace-nowrap">
+          <h1 className="text-[clamp(2rem,10.8vw,3.5rem)] md:text-[clamp(2.5rem,6.4vw,4.5rem)] font-bold text-center leading-tight md:whitespace-nowrap md:leading-tight max-md:text-balance">
             Llevamos tu visión más allá
           </h1>
-          <div className="text-lg sm:text-2xl md:text-7xl font-bold leading-tight mt-4 inline-block min-h-8 md:inline md:min-h-0">
+          <div className="text-[min(calc((100vw-48px)*0.09),3rem)] md:text-[min(7.5vw,4.5rem)] font-bold leading-tight mt-4 inline-block min-h-8 md:block md:mt-3 md:min-h-0 md:leading-tight">
             <AnimatedText />
           </div>
         </div>

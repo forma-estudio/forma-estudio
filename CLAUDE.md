@@ -41,8 +41,8 @@ Desarrollás el sitio técnicamente. Las decisiones de diseño y de contenido so
 
 ### Anchos de prueba obligatorios
 
-320 (mínimo absoluto), 360, 390, 412, 430, 768 (tablet), 1024 y 1280 (escritorio).
-Los motores a cubrir son Safari en iPhone y Chrome en Android. Cualquier efecto que dependa del navegador (filtros SVG, `backdrop-filter`, `100vh`) se prueba pensando en ambos.
+320 (mínimo absoluto), 360, 390, 412, 430, 768 (tablet), 1024, 1280 y 1366 (escritorio).
+Alturas de referencia: 1024px en tablet, 768px en escritorio. Los motores a cubrir son Safari en iPhone y Chrome en Android. Cualquier efecto que dependa del navegador (filtros SVG, `backdrop-filter`, `100vh`) se prueba pensando en ambos.
 
 ### Layout y espaciado
 
@@ -54,6 +54,8 @@ Los motores a cubrir son Safari en iPhone y Chrome en Android. Cualquier efecto 
 ### Tipografía
 
 - Tamaños fluidos con `clamp()` o escalas responsivas. Los títulos grandes deben mantener impacto sin desbordar.
+- **Tamaños de fuente SOLO en clases de Tailwind, nunca en `style` inline.** El style inline pisa las clases `md:` y `lg:`. Referencia: `text-7xl` = 72px, `text-5xl` = 48px.
+- Para medir el ancho de un título o texto, usar un Range sobre su contenido: `document.createRange(); range.selectNodeContents(elemento); range.getClientRects()`. El `getBoundingClientRect()` del elemento devuelve siempre el 100% del ancho de su caja, no el ancho real del texto.
 - **No usar `whitespace-nowrap` en mobile.** Si un título necesita ir en una línea en escritorio, aplicar `md:whitespace-nowrap` y dejar que en celular pase a 2 renglones centrados.
 - Centrar siempre con `text-center` y flex (`justify-center`), nunca confiando en que el desborde se reparta solo.
 - Las frases animadas (rotativas o con efecto de tipeo) reservan su espacio (altura y ancho mínimos) para que no se mueva el resto del texto cuando cambian.
