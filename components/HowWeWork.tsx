@@ -1,6 +1,44 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
+
 export default function HowWeWork() {
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!window.matchMedia('(max-width: 1023px)').matches) return
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const cards = sectionRef.current?.querySelectorAll('.card-item') || []
+
+    if (prefersReduced) {
+      cards.forEach(card => card.classList.add('reveal'))
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    cards.forEach((card, idx) => {
+      const isSecondColumn = (idx + 1) % 2 === 0
+      if (isSecondColumn) {
+        (card as HTMLElement).style.setProperty('--delay', '120ms')
+      }
+      observer.observe(card)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
   const steps = [
     {
       number: 1,
@@ -32,7 +70,7 @@ export default function HowWeWork() {
   ]
 
   return (
-    <section id="como-trabajamos" className="bg-forma-black py-16 px-6 lg:overflow-hidden">
+    <section ref={sectionRef} id="como-trabajamos" className="bg-forma-black py-16 px-6 lg:overflow-hidden">
       <div className="max-w-6xl mx-auto mb-12">
         <div className="text-center mb-4">
           <p className="text-forma-pink font-semibold text-sm tracking-widest uppercase">
@@ -44,15 +82,12 @@ export default function HowWeWork() {
         </h2>
       </div>
 
-      <div className="relative -mx-6 lg:mx-0 px-5 md:px-6 overflow-x-auto snap-x snap-mandatory scroll-px-5 md:scroll-px-6 lg:overflow-hidden lg:px-4 lg:scroll-px-4 scrollbar-hide" onMouseEnter={(e) => e.currentTarget.classList.add('is-hovering')} onMouseLeave={(e) => e.currentTarget.classList.remove('is-hovering')}>
-        <div className="flex gap-3 drift-track lg:w-fit max-lg:after:content-[''] max-lg:after:shrink-0 max-lg:after:w-2" style={{ scrollBehavior: 'smooth' }}>
+      <div className="relative lg:overflow-hidden lg:px-4" onMouseEnter={(e) => e.currentTarget.classList.add('is-hovering')} onMouseLeave={(e) => e.currentTarget.classList.remove('is-hovering')}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:flex lg:gap-3 lg:w-fit drift-track">
           {steps.map((step, idx) => (
             <div
               key={`card-${step.number}`}
-              className={`card-item shrink-0 snap-center rounded-2xl p-6 lg:p-8 w-[80%] max-w-[380px] lg:w-[clamp(280px,24vw,380px)] lg:max-w-none bg-gradient-to-br ${gradients[idx]} flex flex-col text-white lg:transition-transform lg:duration-300 lg:ease-out lg:cursor-pointer`}
-              style={{
-                minHeight: 'clamp(320px, 28vw, 420px)'
-              }}
+              className={`card-item rounded-2xl p-6 lg:p-8 w-full lg:shrink-0 lg:w-[clamp(280px,24vw,380px)] bg-gradient-to-br ${gradients[idx]} flex flex-col text-white lg:transition-transform lg:duration-300 lg:ease-out lg:cursor-pointer lg:min-h-[clamp(320px,28vw,420px)]`}
             >
               <div>
                 <div className="text-6xl md:text-7xl font-bold mb-4">
@@ -73,12 +108,26 @@ export default function HowWeWork() {
       </div>
 
       <style jsx>{`
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
+        @media (max-width: 1023px) {
+          .card-item {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 600ms ease-out, transform 600ms ease-out;
+            transition-delay: var(--delay, 0ms);
+          }
+
+          .card-item.reveal {
+            opacity: 1;
+            transform: translateY(0);
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .card-item {
+              opacity: 1;
+              transform: translateY(0);
+              transition: none;
+            }
+          }
         }
 
         @media (min-width: 1024px) {
