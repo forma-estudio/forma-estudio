@@ -47,7 +47,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
     return () => {
       if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current)
     }
-  }, [isHovered, slides.length])
+  }, [isHovered, currentSlide, slides.length])
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index)
@@ -106,10 +106,10 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
   const Icon = icons[currentSlide]
 
   return (
-    <section id={withBackground ? "servicios" : undefined} className={`py-32 px-6 min-h-screen flex flex-col justify-center ${withBackground ? 'bg-forma-black' : ''}`} style={{ color: '#FFFFFF' }}>
+    <section id={withBackground ? "servicios" : undefined} className={`min-h-[100svh] py-20 lg:min-h-screen lg:py-32 px-6 flex flex-col justify-center ${withBackground ? 'bg-forma-black' : ''}`} style={{ color: '#FFFFFF' }}>
       <div
         className="max-w-6xl mx-auto w-full overflow-hidden"
-        onMouseEnter={() => setIsHovered(true)}
+        onMouseEnter={() => window.matchMedia('(hover: hover)').matches && setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
@@ -118,11 +118,11 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
         <div className="relative">
           <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {slides.map((slide, idx) => (
-              <div key={idx} className="w-full flex-shrink-0 flex flex-col items-center justify-between text-center" style={{ height: '85vh', paddingTop: '40px', paddingBottom: '40px' }}>
+              <div key={idx} className="w-full flex-shrink-0 flex flex-col items-center justify-between text-center min-h-[70svh] lg:h-[85vh] lg:min-h-0 py-10 lg:py-[40px]">
                 {/* Título con animación reveal */}
                 <div key={currentSlide} className="max-w-3xl" style={{ display: 'flex', flexDirection: 'column', gap: '28px', lineHeight: '1.2' }}>
                   {/* Palabras normales */}
-                  <div className="font-bold text-white flex flex-wrap gap-2" style={{ fontSize: 'clamp(28px, 5vw, 56px)', whiteSpace: 'nowrap' }}>
+                  <div className="font-bold text-white flex flex-wrap gap-2 justify-center" style={{ fontSize: 'clamp(28px, 5vw, 56px)', whiteSpace: 'nowrap' }}>
                     {slide.normalWords.map((word, i) => (
                       <span
                         key={`normal-${i}`}
@@ -134,7 +134,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
                     ))}
                   </div>
                   {/* Palabra clave con glow - más grande y en línea separada */}
-                  <div className="font-bold leading-tight flex flex-wrap gap-2" style={{ fontSize: 'clamp(32px, 6vw, 68px)', whiteSpace: 'nowrap' }}>
+                  <div className="font-bold leading-tight flex flex-wrap gap-2 justify-center" style={{ fontSize: 'clamp(32px, 6vw, 68px)', whiteSpace: 'nowrap' }}>
                     {slide.keywordWords.map((word, i) => (
                       <span
                         key={`keyword-${i}`}
@@ -151,7 +151,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
                 <div className="flex flex-col items-center" style={{ gap: '24px', paddingBottom: '60px' }}>
                   <a
                     href="#contacto"
-                    className="inline-flex items-center gap-2 bg-forma-pink text-forma-black px-10 py-4 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105"
+                    className="inline-flex items-center gap-2 bg-forma-pink text-forma-black px-10 py-4 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform lg:hover:scale-105"
                   >
                     {slide.button}
                     <span className="arrow-icon transition-transform duration-300">
