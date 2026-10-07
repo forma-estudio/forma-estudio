@@ -106,7 +106,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
   const Icon = icons[currentSlide]
 
   return (
-    <section id={withBackground ? "servicios" : undefined} className={`min-h-[100svh] py-20 lg:min-h-screen lg:py-32 px-6 flex flex-col justify-center ${withBackground ? 'bg-forma-black' : ''}`} style={{ color: '#FFFFFF' }}>
+    <section id={withBackground ? "servicios" : undefined} className={`min-h-[100svh] py-20 lg:min-h-screen lg:py-32 px-0 lg:px-6 flex flex-col justify-center ${withBackground ? 'bg-forma-black' : ''}`} style={{ color: '#FFFFFF' }}>
       <div
         className="max-w-6xl mx-auto w-full overflow-hidden"
         onMouseEnter={() => window.matchMedia('(hover: hover)').matches && setIsHovered(true)}
