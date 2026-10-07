@@ -44,12 +44,12 @@ export default function HowWeWork() {
         </h2>
       </div>
 
-      <div className="relative px-5 md:px-6 overflow-x-auto snap-x snap-mandatory scroll-px-5 md:scroll-px-6 lg:overflow-hidden lg:px-4 lg:scroll-px-4 scrollbar-hide" onMouseEnter={(e) => e.currentTarget.classList.add('is-hovering')} onMouseLeave={(e) => e.currentTarget.classList.remove('is-hovering')}>
-        <div className="flex gap-3 lg:w-fit" style={{ scrollBehavior: 'smooth' }}>
+      <div className="relative -mx-6 lg:mx-0 px-5 md:px-6 overflow-x-auto snap-x snap-mandatory scroll-px-5 md:scroll-px-6 lg:overflow-hidden lg:px-4 lg:scroll-px-4 scrollbar-hide" onMouseEnter={(e) => e.currentTarget.classList.add('is-hovering')} onMouseLeave={(e) => e.currentTarget.classList.remove('is-hovering')}>
+        <div className="flex gap-3 drift-track lg:w-fit" style={{ scrollBehavior: 'smooth' }}>
           {steps.map((step, idx) => (
             <div
               key={`card-${step.number}`}
-              className={`card-item shrink-0 snap-center rounded-2xl p-6 lg:p-8 w-[80%] max-w-xs lg:w-96 bg-gradient-to-br ${gradients[idx]} flex flex-col text-white lg:transition-transform lg:duration-300 lg:ease-out lg:cursor-pointer`}
+              className={`card-item shrink-0 snap-center rounded-2xl p-6 lg:p-8 w-[80%] max-w-[380px] lg:w-[clamp(280px,24vw,380px)] lg:max-w-none bg-gradient-to-br ${gradients[idx]} flex flex-col text-white lg:transition-transform lg:duration-300 lg:ease-out lg:cursor-pointer`}
               style={{
                 minHeight: 'clamp(320px, 28vw, 420px)'
               }}
@@ -91,11 +91,11 @@ export default function HowWeWork() {
             }
           }
 
-          .lg\:w-fit {
+          .drift-track {
             animation: drift 9s ease-in-out infinite;
           }
 
-          .is-hovering .lg\:w-fit {
+          .is-hovering .drift-track {
             animation-play-state: paused;
           }
         }
