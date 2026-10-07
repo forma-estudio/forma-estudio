@@ -39,19 +39,18 @@ export default function HowWeWork() {
             Cómo trabajamos
           </p>
         </div>
-        <h2 className="text-5xl md:text-6xl font-bold text-white text-center mb-12">
+        <h2 className="text-[clamp(2rem,9vw,3rem)] md:text-6xl font-bold text-white text-center mb-12">
           Un proceso sin riesgo inicial
         </h2>
       </div>
 
-      <div className="relative px-5 md:px-6 overflow-x-auto snap-x snap-mandatory lg:overflow-hidden lg:px-4 scrollbar-hide" onMouseEnter={(e) => e.currentTarget.classList.add('is-hovering')} onMouseLeave={(e) => e.currentTarget.classList.remove('is-hovering')}>
-        <div className="flex gap-3 lg:animate-drift lg:w-fit" style={{ scrollBehavior: 'smooth' }}>
+      <div className="relative px-5 md:px-6 overflow-x-auto snap-x snap-mandatory scroll-px-5 md:scroll-px-6 lg:overflow-hidden lg:px-4 lg:scroll-px-4 scrollbar-hide" onMouseEnter={(e) => e.currentTarget.classList.add('is-hovering')} onMouseLeave={(e) => e.currentTarget.classList.remove('is-hovering')}>
+        <div className="flex gap-3 lg:w-fit" style={{ scrollBehavior: 'smooth' }}>
           {steps.map((step, idx) => (
             <div
               key={`card-${step.number}`}
-              className={`card-item shrink-0 snap-center rounded-2xl p-8 bg-gradient-to-br ${gradients[idx]} flex flex-col text-white lg:transition-transform lg:duration-300 lg:ease-out lg:cursor-pointer`}
+              className={`card-item shrink-0 snap-center rounded-2xl p-6 lg:p-8 w-[80%] max-w-xs lg:w-96 bg-gradient-to-br ${gradients[idx]} flex flex-col text-white lg:transition-transform lg:duration-300 lg:ease-out lg:cursor-pointer`}
               style={{
-                width: 'clamp(280px, 65vw, 380px)',
                 minHeight: 'clamp(320px, 28vw, 420px)'
               }}
             >
@@ -82,21 +81,23 @@ export default function HowWeWork() {
           display: none;
         }
 
-        @keyframes drift {
-          0%, 100% {
-            transform: translateX(0);
+        @media (min-width: 1024px) {
+          @keyframes drift {
+            0%, 100% {
+              transform: translateX(0);
+            }
+            50% {
+              transform: translateX(-40px);
+            }
           }
-          50% {
-            transform: translateX(-40px);
+
+          .lg\:w-fit {
+            animation: drift 9s ease-in-out infinite;
           }
-        }
 
-        .lg\:animate-drift {
-          animation: drift 9s ease-in-out infinite;
-        }
-
-        .is-hovering .lg\:animate-drift {
-          animation-play-state: paused;
+          .is-hovering .lg\:w-fit {
+            animation-play-state: paused;
+          }
         }
 
         @media (hover: hover) and (min-width: 1024px) {
