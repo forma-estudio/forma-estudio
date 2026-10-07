@@ -32,7 +32,7 @@ export default function HowWeWork() {
   ]
 
   return (
-    <section id="como-trabajamos" className="bg-forma-black py-16 px-6 overflow-hidden">
+    <section id="como-trabajamos" className="bg-forma-black py-16 px-6 lg:overflow-hidden">
       <div className="max-w-6xl mx-auto mb-12">
         <div className="text-center mb-4">
           <p className="text-forma-pink font-semibold text-sm tracking-widest uppercase">
@@ -44,27 +44,27 @@ export default function HowWeWork() {
         </h2>
       </div>
 
-      <div className="relative overflow-hidden px-4" onMouseEnter={(e) => e.currentTarget.classList.add('is-hovering')} onMouseLeave={(e) => e.currentTarget.classList.remove('is-hovering')}>
-        <div className="flex gap-3 animate-drift" style={{ width: 'fit-content' }}>
+      <div className="relative px-5 md:px-6 overflow-x-auto snap-x snap-mandatory lg:overflow-hidden lg:px-4 scrollbar-hide" onMouseEnter={(e) => e.currentTarget.classList.add('is-hovering')} onMouseLeave={(e) => e.currentTarget.classList.remove('is-hovering')}>
+        <div className="flex gap-3 lg:animate-drift lg:w-fit" style={{ scrollBehavior: 'smooth' }}>
           {steps.map((step, idx) => (
             <div
               key={`card-${step.number}`}
-              className={`card-item flex-shrink-0 rounded-2xl p-8 bg-gradient-to-br ${gradients[idx]} flex flex-col text-white transition-transform duration-300 ease-out cursor-pointer`}
+              className={`card-item shrink-0 snap-center rounded-2xl p-8 bg-gradient-to-br ${gradients[idx]} flex flex-col text-white lg:transition-transform lg:duration-300 lg:ease-out lg:cursor-pointer`}
               style={{
-                width: 'clamp(280px, 24vw, 380px)',
+                width: 'clamp(280px, 65vw, 380px)',
                 minHeight: 'clamp(320px, 28vw, 420px)'
               }}
             >
               <div>
-                <div className="text-7xl font-bold mb-4">
+                <div className="text-6xl md:text-7xl font-bold mb-4">
                   #{step.number}
                 </div>
-                <h3 className="text-2xl font-bold mb-6">
+                <h3 className="text-xl md:text-2xl font-bold mb-6">
                   {step.title}
                 </h3>
               </div>
               <div className="flex-1 flex items-center justify-center">
-                <p className="text-base leading-relaxed">
+                <p className="text-sm md:text-base leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -74,6 +74,14 @@ export default function HowWeWork() {
       </div>
 
       <style jsx>{`
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+
         @keyframes drift {
           0%, 100% {
             transform: translateX(0);
@@ -83,20 +91,22 @@ export default function HowWeWork() {
           }
         }
 
-        .animate-drift {
+        .lg\:animate-drift {
           animation: drift 9s ease-in-out infinite;
         }
 
-        .is-hovering .animate-drift {
+        .is-hovering .lg\:animate-drift {
           animation-play-state: paused;
         }
 
-        .card-item:hover {
-          transform: scale(1.05);
-        }
+        @media (hover: hover) and (min-width: 1024px) {
+          .card-item:hover {
+            transform: scale(1.05);
+          }
 
-        .is-hovering .card-item:not(:hover) {
-          opacity: 0.85;
+          .is-hovering .card-item:not(:hover) {
+            opacity: 0.85;
+          }
         }
       `}</style>
     </section>
