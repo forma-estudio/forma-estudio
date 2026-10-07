@@ -45,7 +45,7 @@ export default function HowWeWork() {
       </div>
 
       <div className="relative -mx-6 lg:mx-0 px-5 md:px-6 overflow-x-auto snap-x snap-mandatory scroll-px-5 md:scroll-px-6 lg:overflow-hidden lg:px-4 lg:scroll-px-4 scrollbar-hide" onMouseEnter={(e) => e.currentTarget.classList.add('is-hovering')} onMouseLeave={(e) => e.currentTarget.classList.remove('is-hovering')}>
-        <div className="flex gap-3 drift-track lg:w-fit" style={{ scrollBehavior: 'smooth' }}>
+        <div className="flex gap-3 drift-track lg:w-fit max-lg:after:content-[''] max-lg:after:shrink-0 max-lg:after:w-2" style={{ scrollBehavior: 'smooth' }}>
           {steps.map((step, idx) => (
             <div
               key={`card-${step.number}`}
