@@ -6,7 +6,7 @@ export default function HowWeWork() {
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (!window.matchMedia('(max-width: 1023px)').matches) return
+    sectionRef.current?.classList.add('reveal-ready')
 
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const cards = sectionRef.current?.querySelectorAll('.card-item') || []
@@ -109,20 +109,20 @@ export default function HowWeWork() {
 
       <style jsx>{`
         @media (max-width: 1023px) {
-          .card-item {
+          .reveal-ready .card-item {
             opacity: 0;
             transform: translateY(24px);
             transition: opacity 600ms ease-out, transform 600ms ease-out;
             transition-delay: var(--delay, 0ms);
           }
 
-          .card-item.reveal {
+          .reveal-ready .card-item.reveal {
             opacity: 1;
             transform: translateY(0);
           }
 
           @media (prefers-reduced-motion: reduce) {
-            .card-item {
+            .reveal-ready .card-item {
               opacity: 1;
               transform: translateY(0);
               transition: none;
