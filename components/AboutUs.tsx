@@ -1,59 +1,27 @@
 'use client'
 
 import { useRef, useState, useEffect } from 'react'
+import FaqAccordion from './FaqAccordion'
+import { useGlobeSpin } from './useGlobeSpin'
 
 const FAQS = [
-  {
-    question: '¿Cuánto tarda un proyecto?',
-    answer: 'Depende del alcance, pero la vista previa funcional la tenés en pocos días. El desarrollo completo suele tomar entre 2 y 4 semanas.'
-  },
-  {
-    question: '¿Qué pasa si no me gusta el resultado?',
-    answer: 'No pagás nada. Te mostramos una vista previa real antes de cobrarte un solo peso — si no te convence, ahí termina, sin compromiso.'
-  },
-  {
-    question: '¿Ofrecen mantenimiento después del lanzamiento?',
-    answer: 'Sí. Nos encargamos del dominio, el alojamiento y mantenemos tu sitio rápido, seguro y actualizado.'
-  },
-  {
-    question: '¿Trabajan con negocios de cualquier rubro?',
-    answer: 'Sí, trabajamos con PyMEs, profesionales y comercios locales de cualquier rubro que quieran mejorar su presencia digital.'
-  }
+  { q: '¿Cuánto tarda un proyecto?', a: 'Depende del alcance, pero la vista previa funcional la tenés en pocos días. El desarrollo completo suele tomar entre 2 y 4 semanas.' },
+  { q: '¿Qué pasa si no me gusta el resultado?', a: 'No pagás nada. Te mostramos una vista previa real antes de cobrarte un solo peso — si no te convence, ahí termina, sin compromiso.' },
+  { q: '¿Ofrecen mantenimiento después del lanzamiento?', a: 'Sí. Nos encargamos del dominio, el alojamiento y mantenemos tu sitio rápido, seguro y actualizado.' },
+  { q: '¿Trabajan con negocios de cualquier rubro?', a: 'Sí, trabajamos con PyMEs, profesionales y comercios locales de cualquier rubro que quieran mejorar su presencia digital.' },
 ]
 
 export default function AboutUs() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const faqButtonRef = useRef<HTMLButtonElement>(null)
+  const faqButtonRef = useRef<HTMLDivElement>(null)
+  const globe1RotRef = useRef<HTMLDivElement>(null)
+  const globe2RotRef = useRef<HTMLDivElement>(null)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
   const [showFAQ, setShowFAQ] = useState(false)
-  const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null)
-  const [isMobile, setIsMobile] = useState(false)
 
-  // Globe refs
-  const globe1WrapperRef = useRef<HTMLDivElement>(null)
-  const globe1RotatorRef = useRef<HTMLDivElement>(null)
-  const globe2WrapperRef = useRef<HTMLDivElement>(null)
-  const globe2RotatorRef = useRef<HTMLDivElement>(null)
-  const animStateRef = useRef({ angle1: 0, angle2: 0, vel1Extra: 0, vel2Extra: 0, isInView: true })
-  const rafRef = useRef<number | null>(null)
+  useGlobeSpin([{ el: globe1RotRef, degPerSec: 9 }, { el: globe2RotRef, degPerSec: -6.55 }], sectionRef)
 
-  // Check if mobile
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 1023px)')
-    const handleChange = (e: MediaQueryListEvent) => {
-      setIsMobile(e.matches)
-    }
-
-    setIsMobile(mediaQuery.matches)
-    mediaQuery.addEventListener('change', handleChange)
-
-    return () => mediaQuery.removeEventListener('change', handleChange)
-  }, [])
-
-  // Desktop: mouse parallax
-  useEffect(() => {
-    if (isMobile) return
-
     const section = sectionRef.current
     if (!section) return
 
@@ -68,17 +36,15 @@ export default function AboutUs() {
 
     section.addEventListener('mousemove', handleMouseMove)
     return () => section.removeEventListener('mousemove', handleMouseMove)
-  }, [isMobile])
+  }, [])
 
-  // Desktop: FAQ tooltip
   useEffect(() => {
-    if (isMobile) return
-
     const button = faqButtonRef.current
     if (!button) return
 
     const handleMouseEnter = () => setShowFAQ(true)
-    const handleMouseLeave = () => {
+    const handleMouseLeave = (e: MouseEvent) => {
+      // Cerrar solo si el cursor se aleja completamente
       setTimeout(() => {
         const tooltip = button.querySelector('[data-faq-tooltip]')
         if (tooltip && !tooltip.matches(':hover') && !button.matches(':hover')) {
@@ -97,111 +63,7 @@ export default function AboutUs() {
       button.removeEventListener('mouseleave', handleMouseLeave)
       button.removeEventListener('click', handleClick)
     }
-  }, [isMobile])
-
-  // Mobile: Accordion
-  const toggleAccordion = (idx: number) => {
-    setExpandedFAQ(expandedFAQ === idx ? null : idx)
-  }
-
-  // Mobile: Globes Animation + Dragging
-  useEffect(() => {
-    if (!isMobile) return
-
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-    // Intersection Observer
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        animStateRef.current.isInView = entry.isIntersecting
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    // Pointer drag for globe 1
-    const handleGlobe1PointerDown = (e: PointerEvent) => {
-      if (e.pointerType !== 'touch') return
-      const startX = e.clientX
-      const onMove = (me: PointerEvent) => {
-        const deltaX = me.clientX - startX
-        animStateRef.current.vel1Extra = deltaX * 0.5
-      }
-      const onEnd = () => {
-        document.removeEventListener('pointermove', onMove)
-        document.removeEventListener('pointerup', onEnd)
-        document.removeEventListener('pointercancel', onEnd)
-      }
-      document.addEventListener('pointermove', onMove)
-      document.addEventListener('pointerup', onEnd)
-      document.addEventListener('pointercancel', onEnd)
-    }
-
-    // Pointer drag for globe 2
-    const handleGlobe2PointerDown = (e: PointerEvent) => {
-      if (e.pointerType !== 'touch') return
-      const startX = e.clientX
-      const onMove = (me: PointerEvent) => {
-        const deltaX = me.clientX - startX
-        animStateRef.current.vel2Extra = deltaX * 0.5
-      }
-      const onEnd = () => {
-        document.removeEventListener('pointermove', onMove)
-        document.removeEventListener('pointerup', onEnd)
-        document.removeEventListener('pointercancel', onEnd)
-      }
-      document.addEventListener('pointermove', onMove)
-      document.addEventListener('pointerup', onEnd)
-      document.addEventListener('pointercancel', onEnd)
-    }
-
-    globe1WrapperRef.current?.addEventListener('pointerdown', handleGlobe1PointerDown)
-    globe2WrapperRef.current?.addEventListener('pointerdown', handleGlobe2PointerDown)
-
-    // RAF loop
-    const tick = () => {
-      if (animStateRef.current.isInView) {
-        const state = animStateRef.current
-
-        if (!prefersReduced) {
-          state.angle1 += 360 / 40000 + state.vel1Extra
-          state.angle2 -= 360 / 55000 + state.vel2Extra
-
-          state.vel1Extra *= 0.95
-          state.vel2Extra *= 0.95
-
-          if (Math.abs(state.vel1Extra) < 0.01) state.vel1Extra = 0
-          if (Math.abs(state.vel2Extra) < 0.01) state.vel2Extra = 0
-        } else {
-          state.angle1 += 360 / 120000
-          state.angle2 -= 360 / 160000
-        }
-
-        if (globe1RotatorRef.current) {
-          globe1RotatorRef.current.style.transform = `rotate(${state.angle1}deg)`
-        }
-        if (globe2RotatorRef.current) {
-          globe2RotatorRef.current.style.transform = `rotate(${state.angle2}deg)`
-        }
-      }
-
-      rafRef.current = requestAnimationFrame(tick)
-    }
-
-    rafRef.current = requestAnimationFrame(tick)
-
-    return () => {
-      observer.disconnect()
-      if (rafRef.current !== null) {
-        cancelAnimationFrame(rafRef.current)
-      }
-      globe1WrapperRef.current?.removeEventListener('pointerdown', handleGlobe1PointerDown)
-      globe2WrapperRef.current?.removeEventListener('pointerdown', handleGlobe2PointerDown)
-    }
-  }, [isMobile])
+  }, [showFAQ])
 
   const Globe1SVG = () => (
     <svg viewBox="0 0 200 200" style={{ width: '100%', height: '100%' }}>
@@ -234,23 +96,21 @@ export default function AboutUs() {
       className="relative min-h-screen pt-32 pb-20 px-6 overflow-hidden"
       style={{ backgroundColor: '#000000' }}
     >
-      {/* GLOBO 1 */}
+      {/* GLOBO 1: Parallax wrapper (translate) + Inner rotator */}
       <div
-        ref={globe1WrapperRef}
-        className={`absolute pointer-events-none ${isMobile ? 'touch-action-pan-y' : ''}`}
+        className="absolute pointer-events-auto touch-pan-y lg:pointer-events-none"
         style={{
           right: '-60px',
           top: '20%',
           width: '320px',
           height: '320px',
           zIndex: 0,
-          pointerEvents: isMobile ? 'auto' : 'none',
-          transform: !isMobile ? `translate(${mousePos.x * 60}px, ${mousePos.y * 60}px)` : 'none',
-          transition: !isMobile ? 'transform 0.15s ease-out' : 'none'
+          transform: `translate(${mousePos.x * 60}px, ${mousePos.y * 60}px)`,
+          transition: 'transform 0.15s ease-out'
         }}
       >
         <div
-          ref={globe1RotatorRef}
+          ref={globe1RotRef}
           className="globe-spin-1"
           style={{
             width: '100%',
@@ -264,23 +124,21 @@ export default function AboutUs() {
         </div>
       </div>
 
-      {/* GLOBO 2 */}
+      {/* GLOBO 2: Parallax wrapper (translate) + Inner rotator */}
       <div
-        ref={globe2WrapperRef}
-        className={`absolute pointer-events-none ${isMobile ? 'touch-action-pan-y' : ''}`}
+        className="absolute pointer-events-auto touch-pan-y lg:pointer-events-none"
         style={{
           left: '-40px',
           bottom: '10%',
           width: '200px',
           height: '200px',
           zIndex: 0,
-          pointerEvents: isMobile ? 'auto' : 'none',
-          transform: !isMobile ? `translate(${mousePos.x * -40}px, ${mousePos.y * -40}px)` : 'none',
-          transition: !isMobile ? 'transform 0.15s ease-out' : 'none'
+          transform: `translate(${mousePos.x * -40}px, ${mousePos.y * -40}px)`,
+          transition: 'transform 0.15s ease-out'
         }}
       >
         <div
-          ref={globe2RotatorRef}
+          ref={globe2RotRef}
           className="globe-spin-2"
           style={{
             width: '100%',
@@ -295,12 +153,12 @@ export default function AboutUs() {
       </div>
 
       {/* Contenido */}
-      <div className={`max-w-3xl mx-auto relative z-10 ${isMobile ? 'pointer-events-none' : ''}`}>
+      <div className="max-w-3xl mx-auto relative z-10 pointer-events-none lg:pointer-events-auto">
         <h2 className="text-5xl md:text-7xl font-bold mb-12" style={{ color: '#FF91A4' }}>
           Sobre nosotros
         </h2>
 
-        <div className="space-y-8 text-lg md:text-xl leading-relaxed" style={{ color: '#FFFFFF', pointerEvents: 'auto' }}>
+        <div className="space-y-8 text-lg md:text-xl leading-relaxed" style={{ color: '#FFFFFF' }}>
           <p>
             En <strong>FORMA ESTUDIO</strong>, creemos que el diseño web es mucho más que estética. Es la puerta de entrada a tu negocio, la primera impresión que generan en tus clientes.
           </p>
@@ -309,16 +167,17 @@ export default function AboutUs() {
             No hacemos sitios web genéricos: cada proyecto es único, como tu empresa. Nos encargamos de todo: desde el concepto y diseño, hasta el desarrollo, lanzamiento y mantenimiento. Cuando trabajás con nosotros, trabajás con gente que entiende tus preocupaciones y las convierte en oportunidades.
           </p>
 
-          {/* Desktop: FAQ Tooltip */}
-          <div className="mt-12 relative inline-block hidden lg:inline-block">
-            <button
+          {/* Botón FAQ */}
+          <div className="mt-12 relative hidden lg:inline-block">
+            <div
               ref={faqButtonRef}
               className="inline-flex items-center gap-2 bg-forma-pink text-forma-black px-8 py-4 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105 cursor-pointer"
-              style={{ userSelect: 'none', border: 'none' }}
+              style={{ userSelect: 'none' }}
             >
               PREGUNTAS FRECUENTES
-            </button>
+            </div>
 
+            {/* Tooltip FAQ */}
             {showFAQ && (
               <div
                 data-faq-tooltip
@@ -331,67 +190,33 @@ export default function AboutUs() {
                   width: '360px',
                   maxHeight: '90vh',
                   overflowY: 'auto',
-                  pointerEvents: 'auto'
+                  opacity: showFAQ ? 1 : 0,
+                  pointerEvents: 'auto',
+                  transition: 'all 0.3s ease-out'
                 }}
               >
                 <div className="space-y-4">
-                  {FAQS.map((faq, idx) => (
-                    <div key={idx}>
-                      <p className="font-bold">{faq.question}</p>
-                      <p className="text-sm mt-1">{faq.answer}</p>
-                    </div>
-                  ))}
+                  <div>
+                    <p className="font-bold">¿Cuánto tarda un proyecto?</p>
+                    <p className="text-sm mt-1">Depende del alcance, pero la vista previa funcional la tenés en pocos días. El desarrollo completo suele tomar entre 2 y 4 semanas.</p>
+                  </div>
+                  <div>
+                    <p className="font-bold">¿Qué pasa si no me gusta el resultado?</p>
+                    <p className="text-sm mt-1">No pagás nada. Te mostramos una vista previa real antes de cobrarte un solo peso — si no te convence, ahí termina, sin compromiso.</p>
+                  </div>
+                  <div>
+                    <p className="font-bold">¿Ofrecen mantenimiento después del lanzamiento?</p>
+                    <p className="text-sm mt-1">Sí. Nos encargamos del dominio, el alojamiento y mantenemos tu sitio rápido, seguro y actualizado.</p>
+                  </div>
+                  <div>
+                    <p className="font-bold">¿Trabajan con negocios de cualquier rubro?</p>
+                    <p className="text-sm mt-1">Sí, trabajamos con PyMEs, profesionales y comercios locales de cualquier rubro que quieran mejorar su presencia digital.</p>
+                  </div>
                 </div>
               </div>
             )}
           </div>
-
-          {/* Mobile: FAQ Accordion */}
-          <div className="mt-12 lg:hidden pointer-events-auto">
-            <p className="text-forma-pink font-semibold text-sm tracking-widest uppercase mb-6">
-              Preguntas frecuentes
-            </p>
-            <div className="border-b border-white/15">
-              {FAQS.map((faq, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    display: 'grid',
-                    gridTemplateRows: expandedFAQ === idx ? 'auto 1fr' : 'auto 0fr',
-                    transition: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'none' : 'grid-template-rows 300ms ease-out'
-                  }}
-                >
-                  <button
-                    aria-expanded={expandedFAQ === idx}
-                    aria-controls={`faq-answer-${idx}`}
-                    onClick={() => toggleAccordion(idx)}
-                    className="w-full py-4 px-0 flex items-center justify-between text-white font-semibold text-base border-b border-white/15 transition-colors duration-300"
-                    style={{ border: 'none', background: 'none', padding: '16px 0' }}
-                  >
-                    <span>{faq.question}</span>
-                    <span
-                      style={{
-                        color: '#B98CE8',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: '20px',
-                        height: '20px',
-                        transform: expandedFAQ === idx ? 'rotate(45deg)' : 'rotate(0deg)',
-                        transition: 'transform 300ms ease-out',
-                        flexShrink: 0
-                      }}
-                    >
-                      +
-                    </span>
-                  </button>
-                  <div id={`faq-answer-${idx}`} style={{ overflow: 'hidden' }}>
-                    <p className="text-white/80 text-base py-4 px-0">{faq.answer}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <div className="lg:hidden"><FaqAccordion faqs={FAQS} /></div>
         </div>
       </div>
 
@@ -413,15 +238,15 @@ export default function AboutUs() {
           animation: spin 55s linear infinite reverse;
         }
 
+        section {
+          cursor: default;
+        }
+
         @media (max-width: 1023px) {
           .globe-spin-1,
           .globe-spin-2 {
             animation: none;
           }
-        }
-
-        section {
-          cursor: default;
         }
       `}</style>
     </section>
