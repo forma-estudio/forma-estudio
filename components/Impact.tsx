@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import Image from 'next/image'
 
 export default function Impact() {
   const [count500, setCount500] = useState(0)
@@ -51,36 +50,12 @@ export default function Impact() {
   }, [hasAnimated])
 
   return (
-    <section ref={sectionRef} className="bg-forma-white py-20 px-6 relative overflow-hidden">
-      {/* Decorative @ glossy image - Left */}
-      <div className="absolute left-0 top-0 w-32 h-32 md:w-96 md:h-96 pointer-events-none z-0 overflow-hidden opacity-15 md:opacity-30">
-        <Image
-          src="/images/arroba.png"
-          alt=""
-          width={500}
-          height={500}
-          className="w-full h-full object-cover"
-          priority={false}
-        />
-      </div>
-
-      {/* Decorative @ glossy image - Right */}
-      <div className="absolute right-0 top-1/3 w-32 h-32 md:w-96 md:h-96 pointer-events-none z-0 overflow-hidden opacity-15 md:opacity-30" style={{ transform: 'scaleX(-1)' }}>
-        <Image
-          src="/images/arroba.png"
-          alt=""
-          width={500}
-          height={500}
-          className="w-full h-full object-cover"
-          priority={false}
-        />
-      </div>
-
+    <section ref={sectionRef} className="py-20 px-6 relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 gap-12 lg:gap-20 lg:grid-cols-2">
           {/* Left Column */}
           <div>
-            <h2 className="font-display text-[clamp(2rem,7vw,3rem)] md:text-5xl font-bold text-forma-black mb-6 leading-tight">
+            <h2 className="font-display text-[clamp(2rem,7vw,3rem)] md:text-5xl font-bold text-white mb-6 leading-tight">
               Convertimos la eficiencia{' '}
               <span className="bg-gradient-to-r from-forma-purple to-forma-pink bg-clip-text text-transparent">
                 tecnológica

@@ -3,11 +3,14 @@ import Impact from '@/components/Impact'
 import HowWeWork from '@/components/HowWeWork'
 import HeroVosDecidis from '@/components/HeroVosDecidis'
 import AboutUs from '@/components/AboutUs'
+import PhraseForma from '@/components/PhraseForma'
 import Contact from '@/components/Contact'
+import ParticlesBackground from '@/components/ParticlesBackground'
 
 export default function Home() {
   return (
     <>
+      <ParticlesBackground />
       <div id="hero">
         <Hero />
       </div>
@@ -15,6 +18,7 @@ export default function Home() {
       <HowWeWork />
       <HeroVosDecidis />
       <AboutUs />
+      <PhraseForma />
       <Contact />
     </>
   )

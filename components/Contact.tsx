@@ -102,7 +102,6 @@ export default function Contact() {
           position: relative;
           width: 100%;
           min-height: 100svh;
-          background: #000;
           overflow: hidden;
           display: flex;
           align-items: center;

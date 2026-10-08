@@ -3,11 +3,8 @@ import AnimatedText from './AnimatedText'
 export default function Hero() {
   return (
     <section
-      className="min-h-screen text-forma-white flex items-center justify-center pt-20 relative overflow-hidden bg-forma-black"
+      className="min-h-screen text-forma-white flex items-center justify-center pt-20 relative overflow-hidden"
     >
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="bg-layer" />
-      </div>
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <div className="inline-block border-2 border-forma-pink text-forma-pink rounded-full px-6 py-3 text-base font-bold mb-8 bg-forma-pink/5">
           Estudio de diseño web

@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${poppins.variable} ${display.variable}`}>
-      <body className="bg-forma-white text-forma-black font-sans">
+      <body className="bg-[#101820] text-forma-black font-sans">
         <Header />
         <main>{children}</main>
         <Footer />

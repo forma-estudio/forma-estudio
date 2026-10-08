@@ -94,7 +94,6 @@ export default function AboutUs() {
       id="sobre-nosotros"
       ref={sectionRef}
       className="relative min-h-screen pt-32 pb-20 px-6 overflow-hidden"
-      style={{ backgroundColor: '#000000' }}
     >
       {/* GLOBO 1: Parallax wrapper (translate) + Inner rotator */}
       <div

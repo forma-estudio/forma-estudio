@@ -70,7 +70,7 @@ export default function HowWeWork() {
   ]
 
   return (
-    <section ref={sectionRef} id="como-trabajamos" className="bg-forma-black py-16 px-6 lg:overflow-hidden">
+    <section ref={sectionRef} id="como-trabajamos" className="py-16 px-6 lg:overflow-hidden">
       <div className="max-w-6xl mx-auto mb-12">
         <div className="text-center mb-4">
           <p className="text-forma-pink font-semibold text-sm tracking-widest uppercase">
@@ -87,8 +87,9 @@ export default function HowWeWork() {
           {steps.map((step, idx) => (
             <div
               key={`card-${step.number}`}
-              className={`card-item rounded-2xl p-6 lg:p-8 w-full xl:flex-1 xl:min-w-0 xl:max-w-[380px] bg-gradient-to-br ${gradients[idx]} flex flex-col text-white lg:transition-transform lg:duration-300 lg:ease-out lg:cursor-pointer lg:min-h-[clamp(320px,28vw,420px)]`}
+              className={`card-item rounded-2xl p-6 lg:p-8 w-full xl:flex-1 xl:min-w-0 xl:max-w-[380px] relative overflow-hidden isolate border border-white/25 flex flex-col text-white lg:transition-transform lg:duration-300 lg:ease-out lg:cursor-pointer lg:min-h-[clamp(320px,28vw,420px)]`}
             >
+              <div aria-hidden className={`absolute inset-0 -z-10 bg-gradient-to-br ${gradients[idx]} opacity-25`} />
               <div>
                 <div className="font-display text-6xl md:text-7xl font-bold mb-4">
                   #{step.number}
