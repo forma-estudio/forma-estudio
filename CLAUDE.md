@@ -81,7 +81,7 @@ En celular no existe el hover. Todo efecto que hoy depende del cursor tiene equi
 
 Los efectos pesados se simplifican en mobile manteniendo la misma estética:
 
-- **Malla ondulante (Servicios):** filtro SVG de turbulencia + desplazamiento. En mobile usar una versión más simple (menor distorsión, sin el brillo extra o con menos octavas) para que no se trabe ni gaste batería.
+- **Malla ondulante (Servicios):** se mantiene igual en todos los anchos hasta que se reemplace por la nueva animación de fondo. No simplificarla sin pedido explícito.
 - **Anillos del vórtice (Empecemos tu proyecto):** de 15 anillos a 6–8 en mobile, con menos `blur`.
 - Animar solo `transform` y `opacity` cuando sea posible.
 - Respetar `prefers-reduced-motion`: con esa preferencia activa, bajar o detener las animaciones decorativas.
@@ -100,7 +100,7 @@ Los efectos pesados se simplifican en mobile manteniendo la misma estética:
 ## Forma de trabajo
 
 1. **Una sección por vez.** No se tocan otras secciones en el mismo cambio.
-2. **Verificación visual obligatoria antes de cada commit.** Mostrar capturas en 360, 390, 768 y 1280 de la sección modificada. Leer el texto de la página (`get_page_text` o similar) NO cuenta como verificación visual.
+2. **Verificación visual obligatoria antes de cada commit.** Mostrar capturas en 360, 390, 768 y 1280 de la sección modificada. Leer el texto de la página (`get_page_text` o similar) NO cuenta como verificación visual. Si no se pueden sacar capturas, ver el punto 7.
 3. Si el resultado no coincide con lo pedido, no hacer commit. Avisar qué diferencia hay entre lo obtenido y lo pedido.
 4. Antes de un cambio grande que mueve estructura, listar qué se va a mover. Se mueve el código existente, no se reescribe de memoria.
 5. Un commit por cambio, con mensaje claro. `npm run build` tiene que pasar sin errores antes de cada push.
