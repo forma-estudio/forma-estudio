@@ -122,7 +122,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
                 {/* Título con animación reveal */}
                 <div key={currentSlide} className="max-w-3xl" style={{ display: 'flex', flexDirection: 'column', gap: '28px', lineHeight: '1.2' }}>
                   {/* Palabras normales */}
-                  <div className="font-bold text-white flex flex-wrap gap-2 justify-center" style={{ fontSize: 'clamp(28px, 5vw, 56px)', whiteSpace: 'nowrap' }}>
+                  <div className="font-display font-bold text-white flex flex-wrap gap-2 justify-center" style={{ fontSize: 'clamp(28px, 5vw, 56px)', whiteSpace: 'nowrap' }}>
                     {slide.normalWords.map((word, i) => (
                       <span
                         key={`normal-${i}`}
@@ -134,7 +134,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
                     ))}
                   </div>
                   {/* Palabra clave con glow - más grande y en línea separada */}
-                  <div className="font-bold leading-tight flex flex-wrap gap-2 justify-center" style={{ fontSize: 'clamp(32px, 6vw, 68px)', whiteSpace: 'nowrap' }}>
+                  <div className="font-display font-bold leading-tight flex flex-wrap gap-2 justify-center" style={{ fontSize: 'clamp(32px, 6vw, 68px)', whiteSpace: 'nowrap' }}>
                     {slide.keywordWords.map((word, i) => (
                       <span
                         key={`keyword-${i}`}

@@ -77,7 +77,7 @@ export default function HowWeWork() {
             Cómo trabajamos
           </p>
         </div>
-        <h2 className="text-[clamp(2rem,9vw,3rem)] md:text-6xl font-bold text-white text-center mb-12">
+        <h2 className="font-display text-[clamp(2rem,9vw,3rem)] md:text-6xl font-bold text-white text-center mb-12">
           Un proceso sin riesgo inicial
         </h2>
       </div>
@@ -90,10 +90,10 @@ export default function HowWeWork() {
               className={`card-item rounded-2xl p-6 lg:p-8 w-full lg:shrink-0 lg:w-[clamp(280px,24vw,380px)] bg-gradient-to-br ${gradients[idx]} flex flex-col text-white lg:transition-transform lg:duration-300 lg:ease-out lg:cursor-pointer lg:min-h-[clamp(320px,28vw,420px)]`}
             >
               <div>
-                <div className="text-6xl md:text-7xl font-bold mb-4">
+                <div className="font-display text-6xl md:text-7xl font-bold mb-4">
                   #{step.number}
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold mb-6">
+                <h3 className="font-display text-xl md:text-2xl font-bold mb-6">
                   {step.title}
                 </h3>
               </div>

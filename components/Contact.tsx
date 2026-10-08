@@ -43,7 +43,7 @@ export default function Contact() {
       </div>
       <div className="center-glow" />
       <div className="badge">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">Empecemos tu proyecto</h2>
+        <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">Empecemos tu proyecto</h2>
         <p className="text-sm md:text-base text-gray-300 mb-6">
           Contanos sobre tu negocio y tu visión. No te cobraremos nada por una primera consulta.
         </p>

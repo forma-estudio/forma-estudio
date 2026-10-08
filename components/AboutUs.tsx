@@ -154,7 +154,7 @@ export default function AboutUs() {
 
       {/* Contenido */}
       <div className="max-w-3xl mx-auto relative z-10 pointer-events-none lg:pointer-events-auto">
-        <h2 className="text-5xl md:text-7xl font-bold mb-12" style={{ color: '#FF91A4' }}>
+        <h2 className="font-display text-5xl md:text-7xl font-bold mb-12" style={{ color: '#FF91A4' }}>
           Sobre nosotros
         </h2>
 

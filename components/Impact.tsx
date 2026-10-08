@@ -80,7 +80,7 @@ export default function Impact() {
         <div className="grid grid-cols-1 gap-12 lg:gap-20 lg:grid-cols-2">
           {/* Left Column */}
           <div>
-            <h2 className="text-[clamp(2rem,7vw,3rem)] md:text-5xl font-bold text-forma-black mb-6 leading-tight">
+            <h2 className="font-display text-[clamp(2rem,7vw,3rem)] md:text-5xl font-bold text-forma-black mb-6 leading-tight">
               Convertimos la eficiencia{' '}
               <span className="bg-gradient-to-r from-forma-purple to-forma-pink bg-clip-text text-transparent">
                 tecnológica
@@ -100,7 +100,7 @@ export default function Impact() {
           <div className="space-y-6">
             {/* Card 1 - Largest */}
             <div className="border border-forma-purple rounded-3xl p-10 bg-transparent text-center">
-              <div className="text-6xl md:text-7xl font-bold text-forma-purple mb-4">
+              <div className="font-display text-6xl md:text-7xl font-bold text-forma-purple mb-4">
                 +{count500}
               </div>
               <p className="text-2xl md:text-3xl text-forma-purple font-semibold">proyectos</p>
@@ -108,7 +108,7 @@ export default function Impact() {
 
             {/* Card 2 - Medium */}
             <div className="border border-forma-purple rounded-3xl p-7 bg-transparent text-center">
-              <div className="text-4xl md:text-5xl font-bold text-forma-purple mb-3">
+              <div className="font-display text-4xl md:text-5xl font-bold text-forma-purple mb-3">
                 +{count10}
               </div>
               <p className="text-xl md:text-2xl text-forma-purple font-semibold">años de experiencia en diseño web</p>
