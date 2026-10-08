@@ -83,11 +83,11 @@ export default function HowWeWork() {
       </div>
 
       <div className="relative lg:overflow-hidden lg:px-4" onMouseEnter={(e) => e.currentTarget.classList.add('is-hovering')} onMouseLeave={(e) => e.currentTarget.classList.remove('is-hovering')}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:flex lg:gap-3 lg:w-fit drift-track">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 xl:flex xl:gap-3 xl:px-6 xl:justify-center drift-track">
           {steps.map((step, idx) => (
             <div
               key={`card-${step.number}`}
-              className={`card-item rounded-2xl p-6 lg:p-8 w-full lg:shrink-0 lg:w-[clamp(280px,24vw,380px)] bg-gradient-to-br ${gradients[idx]} flex flex-col text-white lg:transition-transform lg:duration-300 lg:ease-out lg:cursor-pointer lg:min-h-[clamp(320px,28vw,420px)]`}
+              className={`card-item rounded-2xl p-6 lg:p-8 w-full xl:flex-1 xl:min-w-0 xl:max-w-[380px] bg-gradient-to-br ${gradients[idx]} flex flex-col text-white lg:transition-transform lg:duration-300 lg:ease-out lg:cursor-pointer lg:min-h-[clamp(320px,28vw,420px)]`}
             >
               <div>
                 <div className="font-display text-6xl md:text-7xl font-bold mb-4">
@@ -130,13 +130,13 @@ export default function HowWeWork() {
           }
         }
 
-        @media (min-width: 1024px) {
+        @media (min-width: 1280px) {
           @keyframes drift {
             0%, 100% {
-              transform: translateX(0);
+              transform: translateX(20px);
             }
             50% {
-              transform: translateX(-40px);
+              transform: translateX(-20px);
             }
           }
 
