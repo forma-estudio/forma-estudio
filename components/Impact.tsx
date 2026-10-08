@@ -63,10 +63,10 @@ export default function Impact() {
               {' '}en impacto real.
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-forma-purple to-forma-pink mb-8" />
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
               En <span className="font-bold">FORMA</span> te ayudamos a que tu negocio crezca, con estrategia, tecnología y creatividad que dan resultados.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-300 leading-relaxed">
               Sí, sabemos entender tus apuros.
             </p>
           </div>
@@ -75,23 +75,23 @@ export default function Impact() {
           <div className="space-y-6">
             {/* Card 1 - Largest */}
             <div className="border border-forma-purple rounded-3xl p-10 bg-transparent text-center">
-              <div className="font-display text-6xl md:text-7xl font-bold text-forma-purple mb-4">
+              <div className="font-display text-6xl md:text-7xl font-bold text-[#B98CE8] mb-4">
                 +{count500}
               </div>
-              <p className="text-2xl md:text-3xl text-forma-purple font-semibold">proyectos</p>
+              <p className="text-2xl md:text-3xl text-[#B98CE8] font-semibold">proyectos</p>
             </div>
 
             {/* Card 2 - Medium */}
             <div className="border border-forma-purple rounded-3xl p-7 bg-transparent text-center">
-              <div className="font-display text-4xl md:text-5xl font-bold text-forma-purple mb-3">
+              <div className="font-display text-4xl md:text-5xl font-bold text-[#B98CE8] mb-3">
                 +{count10}
               </div>
-              <p className="text-xl md:text-2xl text-forma-purple font-semibold">años de experiencia en diseño web</p>
+              <p className="text-xl md:text-2xl text-[#B98CE8] font-semibold">años de experiencia en diseño web</p>
             </div>
 
             {/* Card 3 - Smallest */}
             <div className="rounded-3xl p-6 text-center" style={{ backgroundColor: 'rgba(111, 45, 168, 0.06)' }}>
-              <p className="text-lg md:text-2xl text-forma-purple leading-snug">
+              <p className="text-lg md:text-2xl text-[#B98CE8] leading-snug">
                 <span className="font-bold">Qué aburrido ser normal.</span>
                 <br />
                 <span className="font-normal">Mejor ser extraordinario.</span>

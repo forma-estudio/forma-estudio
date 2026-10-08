@@ -17,6 +17,7 @@ export default function ParticlesBackground() {
     let cleanup = () => {}
 
     import('three').then((THREE) => {
+      THREE.ColorManagement.enabled = false
       if (disposed) return
 
       let reduce = false
@@ -116,7 +117,7 @@ export default function ParticlesBackground() {
 
       // Muestreo de "FORMA" con la tipografía real (en Next la familia tiene nombre interno)
       const family = getComputedStyle(slot).fontFamily
-      let ready = false
+      let ready = false, sampledW = 0, sampledFs = 0
       const sample = () => {
         if (disposed) return
         const cs = getComputedStyle(slot)
@@ -159,6 +160,8 @@ export default function ParticlesBackground() {
           xn[p] = homePx[p*2] / cw
           delay[p] = xn[p] * 0.15 + Math.random() * 0.25  // la lluvia avanza suave de izquierda a derecha
         }
+        sampledW = window.innerWidth
+        sampledFs = fs
         ready = true
       }
       const fontReady = document.fonts?.load ? document.fonts.load('700 64px ' + family) : Promise.resolve()
@@ -168,7 +171,10 @@ export default function ParticlesBackground() {
       const onResize = () => {
         resize()
         clearTimeout(resizeTimer)
-        resizeTimer = setTimeout(sample, 150)
+        // la barra del navegador del celular dispara resize al scrollear: solo re-muestrear si cambió el ancho o la letra
+        resizeTimer = setTimeout(() => {
+          if (window.innerWidth !== sampledW || parseFloat(getComputedStyle(slot).fontSize) !== sampledFs) sample()
+        }, 150)
       }
 
       // Puntero (mouse o dedo)

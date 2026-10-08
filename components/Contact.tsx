@@ -150,7 +150,7 @@ export default function Contact() {
           width: 260px;
           height: 260px;
           transform: translate(-50%, -50%);
-          background: radial-gradient(circle, #000 0%, #1a0a2e 60%, transparent 100%);
+          background: radial-gradient(circle, #101820 0%, #1a0a2e 60%, transparent 100%);
           z-index: 2;
           pointer-events: none;
         }
