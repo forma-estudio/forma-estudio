@@ -93,7 +93,7 @@ export default function HowWeWork() {
                 <div className="font-display text-6xl md:text-7xl font-bold mb-4">
                   #{step.number}
                 </div>
-                <h3 className="font-display text-xl md:text-2xl font-bold mb-6">
+                <h3 className="font-display text-xl md:text-2xl xl:text-xl 2xl:text-2xl font-bold mb-6">
                   {step.title}
                 </h3>
               </div>
