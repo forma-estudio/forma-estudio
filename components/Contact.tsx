@@ -85,11 +85,11 @@ export default function Contact() {
           >
             {status === 'sending' ? 'Enviando...' : 'Enviar'}
           </button>
-          <p aria-live="polite">
-            {status === 'ok' && '¡Gracias! Recibimos tu mensaje y te vamos a responder pronto.'}
-            {status === 'error' && 'No pudimos enviar el mensaje. Probá de nuevo o escribinos a formawebok@gmail.com.'}
-          </p>
         </form>
+        <p aria-live="polite" className="text-sm mb-4 empty:mb-0">
+          {status === 'ok' && '¡Gracias! Recibimos tu mensaje y te vamos a responder pronto.'}
+          {status === 'error' && 'No pudimos enviar el mensaje. Probá de nuevo o escribinos a formawebok@gmail.com.'}
+        </p>
         <p className="text-xs md:text-sm text-gray-400 mb-3">
           O escribinos directamente:
         </p>
