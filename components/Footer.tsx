@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-b from-forma-black to-forma-purple text-forma-white py-16 mt-20">
@@ -31,7 +29,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h4 className="font-semibold text-lg mb-4">Síguenos</h4>
+            <h4 className="font-semibold text-lg mb-4">Seguinos</h4>
             <div className="flex justify-center lg:justify-start gap-4">
               <a
                 href="#"
@@ -55,7 +53,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-600 pt-8 flex flex-col lg:flex-row justify-between items-center text-gray-400 text-sm">
-          <p className="text-center lg:text-left">&copy; 2024 FORMA ESTUDIO. Todos los derechos reservados.</p>
+          <p className="text-center lg:text-left">&copy; {new Date().getFullYear()} FORMA ESTUDIO. Todos los derechos reservados.</p>
           <div className="flex gap-6 mt-4 lg:mt-0">
             <a href="#" className="py-3.5 lg:py-0 hover:text-forma-pink transition">
               Privacidad
