@@ -27,6 +27,7 @@ Desarrollás el sitio técnicamente. Las decisiones de diseño y de contenido so
 - Palabras clave con glow pulsante en loop infinito y sin cortes (keyframes con 0% y 100% idénticos).
 - Botones: forma pill (bordes totalmente redondeados).
 - Prohibido: sombras excesivas, gradientes decorativos que no estén ya definidos, emojis en la interfaz, librerías de UI genéricas.
+- Las secciones no llevan fondo sólido para que se vean las partículas. El fondo de la página es #101820. Los botones siempre van con color pleno. Las tarjetas de Cómo trabajamos llevan borde fino (border-white/25) y el degradé en opacity-25.
 
 ---
 
@@ -74,14 +75,13 @@ En celular no existe el hover. Todo efecto que hoy depende del cursor tiene equi
 - Botones: el cambio de color al hover pasa al estado `:active` (presionado).
 - Preguntas frecuentes: debajo de 1024 (mobile y tablet) son un acordeón (`FaqAccordion.tsx`): lista con líneas finas, "+" violeta que rota a ×, una abierta por vez. En escritorio siguen siendo el botón rosa con tooltip al costado.
 - Tarjetas de "Cómo trabajamos": debajo de 768, apiladas; de 768 a 1279, grilla 2x2; desde 1280, fila de 4 con vaivén de ±20px. Debajo de 1024, las tarjetas aparecen al scrollear (IntersectionObserver).
-- Globos de "Sobre nosotros": debajo de 1024 giran solos con requestAnimationFrame y se pueden girar arrastrando con el dedo (`useGlobeSpin.ts`). En escritorio, giro CSS y parallax con el mouse.
 - Carrusel de Servicios: autoplay que sigue después de tocar los puntitos o deslizar; la pausa por hover es solo para dispositivos con mouse.
 
 ### Rendimiento (versión liviana pero fiel)
 
 Los efectos pesados se simplifican en mobile manteniendo la misma estética:
 
-- **Malla ondulante (Servicios):** se mantiene igual en todos los anchos hasta que se reemplace por la nueva animación de fondo. No simplificarla sin pedido explícito.
+- **Fondo de partículas (ParticlesBackground.tsx, three):** canvas fijo detrás de toda la página (-z-10). Las partículas se densifican y cambian de color (blancos/azules a violetas/rosas) con el scroll, se apartan con el cursor o el dedo y forman FORMA en la sección PhraseForma (frase fija con sticky). 10.000 partículas en escritorio y 4.500 debajo de 768. THREE.ColorManagement.enabled = false. Referencia aprobada: referencias/particulas-forma.html (no se sube al repo).
 - **Anillos del vórtice (Empecemos tu proyecto):** de 15 anillos a 6–8 en mobile, con menos `blur`.
 - Animar solo `transform` y `opacity` cuando sea posible.
 - Respetar `prefers-reduced-motion`: con esa preferencia activa, bajar o detener las animaciones decorativas.
@@ -109,6 +109,6 @@ Los efectos pesados se simplifican en mobile manteniendo la misma estética:
 
 ## Estado de las secciones (orden de la página)
 
-Nav → Hero → Impacto → Cómo trabajamos → Servicios (carrusel sobre la malla) → Sobre nosotros (+ preguntas frecuentes) → Empecemos tu proyecto (formulario) → Footer.
+Nav → Hero → Impacto → Cómo trabajamos → Servicios (carrusel sobre la malla) → Sobre nosotros (+ preguntas frecuentes) → Dale FORMA a tu negocio → Empecemos tu proyecto (formulario) → Footer.
 
 Pendiente, a resolver aparte: logo tipográfico del nav (la F con el palo superior extendido como techo sobre "ORMA", un solo SVG con un degradé continuo). La implementación anterior no coincidió con el diseño aprobado. No tocar el logo hasta que se pida.
