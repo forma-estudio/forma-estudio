@@ -16,7 +16,8 @@ Desarrollás el sitio técnicamente. Las decisiones de diseño y de contenido so
 
 - Landing page única de FORMA ESTUDIO (agencia de diseño web para PyMEs, profesionales y comercios locales).
 - Stack: Next.js (App Router) + React + TypeScript + Tailwind. Deploy automático en Vercel con cada push a `master`.
-- Tipografía: Poppins vía `next/font/google`, en toda la web.
+- Tipografía: Poppins vía `next/font/google` para todo, salvo los títulos. Los títulos (Hero, h2 de sección, h3 de tarjetas, números grandes y frases del carrusel) usan la clase `font-display`: Unbounded, cargada en `app/layout.tsx` con la variable `--font-display`. Para cambiar la tipografía de títulos alcanza con cambiar la fuente que carga `layout.tsx`.
+- Formulario de contacto: envía con Web3Forms a formawebok@gmail.com. Campos con 16px de letra (`text-base`) debajo de 1024 para evitar el zoom en iPhone.
 - Navegación: scroll suave a anclas dentro de la misma página. No hay rutas separadas por sección.
 
 ## Identidad visual (sagrado, no se toca sin pedido explícito)
@@ -71,10 +72,10 @@ Alturas de referencia: 1024px en tablet, 768px en escritorio. Los motores a cubr
 En celular no existe el hover. Todo efecto que hoy depende del cursor tiene equivalente táctil:
 
 - Botones: el cambio de color al hover pasa al estado `:active` (presionado).
-- Preguntas frecuentes: se abren con un tap (en mobile, como panel casi a pantalla completa con botón para cerrar; en escritorio siguen abriéndose al hover, hacia el costado).
-- Tarjetas de "Cómo trabajamos": carrusel horizontal con swipe, tarjetas a ~80% del ancho para que se asome la siguiente. El "agrandar al hover" pasa a tap sobre la tarjeta activa.
-- Globos de "Sobre nosotros": el parallax por mouse se reemplaza por un movimiento sutil ligado al scroll. La rotación se mantiene.
-- Carrusel de Servicios: swipe táctil además del autoplay y la barra de progreso.
+- Preguntas frecuentes: debajo de 1024 (mobile y tablet) son un acordeón (`FaqAccordion.tsx`): lista con líneas finas, "+" violeta que rota a ×, una abierta por vez. En escritorio siguen siendo el botón rosa con tooltip al costado.
+- Tarjetas de "Cómo trabajamos": debajo de 768, apiladas; de 768 a 1279, grilla 2x2; desde 1280, fila de 4 con vaivén de ±20px. Debajo de 1024, las tarjetas aparecen al scrollear (IntersectionObserver).
+- Globos de "Sobre nosotros": debajo de 1024 giran solos con requestAnimationFrame y se pueden girar arrastrando con el dedo (`useGlobeSpin.ts`). En escritorio, giro CSS y parallax con el mouse.
+- Carrusel de Servicios: autoplay que sigue después de tocar los puntitos o deslizar; la pausa por hover es solo para dispositivos con mouse.
 
 ### Rendimiento (versión liviana pero fiel)
 
@@ -104,6 +105,7 @@ Los efectos pesados se simplifican en mobile manteniendo la misma estética:
 4. Antes de un cambio grande que mueve estructura, listar qué se va a mover. Se mueve el código existente, no se reescribe de memoria.
 5. Un commit por cambio, con mensaje claro. `npm run build` tiene que pasar sin errores antes de cada push.
 6. Todo push a `master` publica en producción vía Vercel. Revisar el resultado en la URL pública después del deploy.
+7. Si el navegador de la sesión no puede mostrar la página (pestaña oculta), no se inventan mediciones: se sube la rama, se pega el diff real y el usuario verifica en la vista previa de Vercel.
 
 ## Estado de las secciones (orden de la página)
 
