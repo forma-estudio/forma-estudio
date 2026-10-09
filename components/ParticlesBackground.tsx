@@ -220,7 +220,7 @@ export default function ParticlesBackground() {
         const shrink = 1 - 0.2 * e  // apenas se cierra: la condensación se nota por densidad, no por un bloque
         const R = (mobile ? 120 : 170) * wpp0, R2 = R * R
         const push = reduce ? 0 : 16
-        const vis = Math.min(0.6, 0.06 + 0.34 * Math.pow(e, 1.6) + 0.2 * fm)  // densidad: pocas arriba, todas en la frase
+        const vis = Math.min(0.6, 0.06 + 0.34 * Math.pow(e, 1.6) + 0.2 * fm)  // densidad: pocas arriba, ~40% a mitad de página, 60% en la frase
         const hueShift = e * 0.8                                      // blancos/azules arriba → violetas/rosas abajo
 
         for (let i = 0; i < N; i++) {
