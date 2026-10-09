@@ -220,7 +220,7 @@ export default function ParticlesBackground() {
         const shrink = 1 - 0.2 * e  // apenas se cierra: la condensación se nota por densidad, no por un bloque
         const R = (mobile ? 120 : 170) * wpp0, R2 = R * R
         const push = reduce ? 0 : 16
-        const vis = Math.min(1, 0.06 + 0.86 * Math.pow(e, 1.3) + fm)  // densidad: pocas arriba, todas en la frase
+        const vis = Math.min(0.6, 0.06 + 0.34 * Math.pow(e, 1.6) + 0.2 * fm)  // densidad: pocas arriba, todas en la frase
         const hueShift = e * 0.8                                      // blancos/azules arriba → violetas/rosas abajo
 
         for (let i = 0; i < N; i++) {
@@ -269,9 +269,9 @@ export default function ParticlesBackground() {
           col[j]   = cr * k + color.r * s
           col[j+1] = cg * k + color.g * s
           col[j+2] = cb * k + color.b * s
-          size[i] = (mobile ? 5.0 : 4.6) - 1.2 * s
+          size[i] = (mobile ? 3.6 : 3.2) + 0.2 * s
           let on = (vis - rank[i]) / 0.04; on = on < 0 ? 0 : on > 1 ? 1 : on
-          alpha[i] = 0.95 * on
+          alpha[i] = (0.45 + 0.5 * s) * on  // tenues mientras flotan detrás del texto, plenas al formar la palabra
         }
         geo.attributes.position.needsUpdate = true
         geo.attributes.aColor.needsUpdate = true

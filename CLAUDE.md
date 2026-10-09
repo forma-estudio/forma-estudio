@@ -81,7 +81,7 @@ En celular no existe el hover. Todo efecto que hoy depende del cursor tiene equi
 
 Los efectos pesados se simplifican en mobile manteniendo la misma estética:
 
-- **Fondo de partículas (ParticlesBackground.tsx, three):** canvas fijo detrás de toda la página (-z-10). Las partículas se densifican y cambian de color (blancos/azules a violetas/rosas) con el scroll, se apartan con el cursor o el dedo y forman FORMA en la sección PhraseForma (frase fija con sticky). 10.000 partículas en escritorio y 4.500 debajo de 768. THREE.ColorManagement.enabled = false. Referencia aprobada: referencias/particulas-forma.html (no se sube al repo).
+- **Fondo de partículas (ParticlesBackground.tsx, three):** canvas fijo detrás de toda la página (-z-10). Las partículas se densifican y cambian de color (blancos/azules a violetas/rosas) con el scroll, se apartan con el cursor o el dedo y forman FORMA en la sección PhraseForma (frase fija con sticky). 10.000 partículas en escritorio y 4.500 debajo de 768. THREE.ColorManagement.enabled = false. Referencia aprobada: referencias/particulas-forma.html (no se sube al repo). Mientras flotan van tenues (opacidad 0,45) y como máximo ~40% visibles a mitad de página, para no tapar el texto; al formar FORMA llegan a opacidad 0,95 con ~60% de las partículas.
 - Animar solo `transform` y `opacity` cuando sea posible.
 - Respetar `prefers-reduced-motion`: con esa preferencia activa, bajar o detener las animaciones decorativas.
 
