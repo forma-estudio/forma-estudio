@@ -37,7 +37,7 @@ export default function Contact() {
   return (
     <section id="contacto" className="vortex-section">
       <div className="badge">
-        <div className="mx-auto w-full max-w-[480px]">
+        <div className="mx-auto w-full max-w-[560px]">
           <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">Empecemos tu proyecto</h2>
           <p className="text-sm md:text-base text-gray-300 mb-6">
             Contanos sobre tu negocio y tu visión. No te cobraremos nada por una primera consulta.
@@ -112,25 +112,34 @@ export default function Contact() {
           background: rgba(0, 0, 0, 0.5);
           border: 1px solid rgba(255, 145, 164, 0.5);
           color: #fff;
-          padding: 40px 56px;
+          padding: 48px 24px;
           border-radius: 28px;
           backdrop-filter: blur(8px);
-          max-width: 1152px;
+          max-width: 1280px;
           width: 100%;
           margin: 0 auto;
+          min-height: 75svh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           text-align: center;
         }
 
         @media (max-width: 640px) {
           .badge {
-            padding: 28px 24px;
+            min-height: 70svh;
+            padding: 32px 20px;
           }
         }
 
         @media (min-width: 1024px) {
           .vortex-section {
             min-height: 100vh;
-            padding: 80px 48px;
+            padding: 64px 32px;
+          }
+
+          .badge {
+            padding: 80px 64px;
           }
         }
       `}</style>
