@@ -36,12 +36,6 @@ export default function Contact() {
 
   return (
     <section id="contacto" className="vortex-section">
-      <div className="rings-wrap">
-        {Array.from({ length: 15 }).map((_, i) => (
-          <div key={i} className="ring" style={{ '--i': i } as React.CSSProperties} />
-        ))}
-      </div>
-      <div className="center-glow" />
       <div className="badge">
         <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">Empecemos tu proyecto</h2>
         <p className="text-sm md:text-base text-gray-300 mb-6">
@@ -102,57 +96,12 @@ export default function Contact() {
           position: relative;
           width: 100%;
           min-height: 100svh;
+          background: #101820;
           overflow: hidden;
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 60px 20px;
-        }
-
-        .rings-wrap {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 1600px;
-          height: 1600px;
-          transform: translate(-50%, -50%);
-          pointer-events: none;
-        }
-
-        .ring {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 100%;
-          height: 100%;
-          border-radius: 50%;
-          transform: translate(-50%, -50%) scale(0.05);
-          border: 22px solid transparent;
-          border-image: conic-gradient(from 0deg, #3d1a5c, #6F2DA8, #B14CFF, #FF91A4, #B14CFF, #6F2DA8, #3d1a5c) 1;
-          filter: blur(6px);
-          opacity: 0;
-          animation: ringOut 9s linear infinite;
-          animation-delay: calc(var(--i) * 0.6s);
-          pointer-events: none;
-        }
-
-        @keyframes ringOut {
-          0%   { transform: translate(-50%, -50%) scale(0.04); opacity: 0; }
-          8%   { opacity: 0.9; }
-          55%  { opacity: 0.6; }
-          100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
-        }
-
-        .center-glow {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 260px;
-          height: 260px;
-          transform: translate(-50%, -50%);
-          background: radial-gradient(circle, #101820 0%, #1a0a2e 60%, transparent 100%);
-          z-index: 2;
-          pointer-events: none;
         }
 
         .badge {
@@ -174,35 +123,11 @@ export default function Contact() {
             max-width: 92vw;
             padding: 28px 24px;
           }
-
-          .rings-wrap {
-            width: 1200px;
-            height: 1200px;
-          }
         }
 
         @media (min-width: 1024px) {
           .vortex-section {
             min-height: 100vh;
-          }
-        }
-
-        @media (max-width: 1023px) {
-          .ring:nth-child(n+9) {
-            display: none;
-          }
-
-          .ring {
-            filter: blur(3px);
-            animation-delay: calc(var(--i) * 1.125s);
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .ring {
-            animation: none;
-            opacity: 0.3;
-            transform: translate(-50%, -50%) scale(calc(0.1 + var(--i) * 0.06));
           }
         }
       `}</style>

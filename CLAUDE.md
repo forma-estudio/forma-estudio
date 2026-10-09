@@ -27,7 +27,7 @@ Desarrollás el sitio técnicamente. Las decisiones de diseño y de contenido so
 - Palabras clave con glow pulsante en loop infinito y sin cortes (keyframes con 0% y 100% idénticos).
 - Botones: forma pill (bordes totalmente redondeados).
 - Prohibido: sombras excesivas, gradientes decorativos que no estén ya definidos, emojis en la interfaz, librerías de UI genéricas.
-- Las secciones no llevan fondo sólido para que se vean las partículas. El fondo de la página es #101820. Los botones siempre van con color pleno. Las tarjetas de Cómo trabajamos llevan borde fino (border-white/25) y el degradé en opacity-25.
+- Las secciones no llevan fondo sólido para que se vean las partículas. El fondo de la página es #101820. Los botones siempre van con color pleno. Las tarjetas de Cómo trabajamos llevan borde fino (border-white/25) y el degradé en opacity-25. Excepción: Empecemos tu proyecto (Contact.tsx) lleva fondo pleno #101820, sin partículas.
 
 ---
 
@@ -82,7 +82,6 @@ En celular no existe el hover. Todo efecto que hoy depende del cursor tiene equi
 Los efectos pesados se simplifican en mobile manteniendo la misma estética:
 
 - **Fondo de partículas (ParticlesBackground.tsx, three):** canvas fijo detrás de toda la página (-z-10). Las partículas se densifican y cambian de color (blancos/azules a violetas/rosas) con el scroll, se apartan con el cursor o el dedo y forman FORMA en la sección PhraseForma (frase fija con sticky). 10.000 partículas en escritorio y 4.500 debajo de 768. THREE.ColorManagement.enabled = false. Referencia aprobada: referencias/particulas-forma.html (no se sube al repo).
-- **Anillos del vórtice (Empecemos tu proyecto):** de 15 anillos a 6–8 en mobile, con menos `blur`.
 - Animar solo `transform` y `opacity` cuando sea posible.
 - Respetar `prefers-reduced-motion`: con esa preferencia activa, bajar o detener las animaciones decorativas.
 
@@ -109,6 +108,6 @@ Los efectos pesados se simplifican en mobile manteniendo la misma estética:
 
 ## Estado de las secciones (orden de la página)
 
-Nav → Hero → Impacto → Cómo trabajamos → Servicios (carrusel sobre la malla) → Sobre nosotros (+ preguntas frecuentes) → Dale FORMA a tu negocio → Empecemos tu proyecto (formulario) → Footer.
+Nav → Hero → Impacto → Cómo trabajamos → Servicios (carrusel) → Sobre nosotros (+ preguntas frecuentes) → Dale FORMA a tu negocio → Empecemos tu proyecto (formulario) → Footer.
 
 Pendiente, a resolver aparte: logo tipográfico del nav (la F con el palo superior extendido como techo sobre "ORMA", un solo SVG con un degradé continuo). La implementación anterior no coincidió con el diseño aprobado. No tocar el logo hasta que se pida.
