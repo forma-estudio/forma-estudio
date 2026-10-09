@@ -48,11 +48,11 @@ export default function AboutUs() {
     >
       {/* Contenido */}
       <div className="max-w-3xl mx-auto relative z-10">
-        <h2 className="font-display text-5xl md:text-7xl font-bold mb-12" style={{ color: '#FF91A4' }}>
+        <h2 data-reveal className="font-display text-5xl md:text-7xl font-bold mb-12" style={{ color: '#FF91A4' }}>
           Sobre nosotros
         </h2>
 
-        <div className="space-y-8 text-lg md:text-xl leading-relaxed" style={{ color: '#FFFFFF' }}>
+        <div data-reveal className="space-y-8 text-lg md:text-xl leading-relaxed" style={{ color: '#FFFFFF', '--reveal-delay': '120ms' } as React.CSSProperties}>
           <p>
             En <strong>FORMA ESTUDIO</strong>, creemos que el diseño web es mucho más que estética. Es la puerta de entrada a tu negocio, la primera impresión que generan en tus clientes.
           </p>

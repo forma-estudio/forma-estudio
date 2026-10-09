@@ -54,7 +54,7 @@ export default function Impact() {
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 gap-12 lg:gap-20 lg:grid-cols-2">
           {/* Left Column */}
-          <div>
+          <div data-reveal>
             <h2 className="font-display text-[clamp(2rem,7vw,3rem)] md:text-5xl font-bold text-white mb-6 leading-tight">
               Convertimos la eficiencia{' '}
               <span className="bg-gradient-to-r from-forma-purple to-forma-pink bg-clip-text text-transparent">
@@ -74,7 +74,7 @@ export default function Impact() {
           {/* Right Column - Cards */}
           <div className="space-y-6">
             {/* Card 1 - Largest */}
-            <div className="border border-forma-purple rounded-3xl p-10 bg-transparent text-center">
+            <div data-reveal className="border border-forma-purple rounded-3xl p-10 bg-transparent text-center" style={{ '--reveal-delay': '0ms' } as React.CSSProperties}>
               <div className="font-display text-6xl md:text-7xl font-bold text-[#B98CE8] mb-4">
                 +{count500}
               </div>
@@ -82,7 +82,7 @@ export default function Impact() {
             </div>
 
             {/* Card 2 - Medium */}
-            <div className="border border-forma-purple rounded-3xl p-7 bg-transparent text-center">
+            <div data-reveal className="border border-forma-purple rounded-3xl p-7 bg-transparent text-center" style={{ '--reveal-delay': '120ms' } as React.CSSProperties}>
               <div className="font-display text-4xl md:text-5xl font-bold text-[#B98CE8] mb-3">
                 +{count10}
               </div>
@@ -90,7 +90,7 @@ export default function Impact() {
             </div>
 
             {/* Card 3 - Smallest */}
-            <div className="rounded-3xl p-6 text-center" style={{ backgroundColor: 'rgba(111, 45, 168, 0.06)' }}>
+            <div data-reveal className="rounded-3xl p-6 text-center" style={{ backgroundColor: 'rgba(111, 45, 168, 0.06)', '--reveal-delay': '240ms' } as React.CSSProperties}>
               <p className="text-lg md:text-2xl text-[#B98CE8] leading-snug">
                 <span className="font-bold">Qué aburrido ser normal.</span>
                 <br />

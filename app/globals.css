@@ -29,3 +29,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+html.reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 700ms ease-out, transform 700ms ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+html.reveal-ready [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}

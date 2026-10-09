@@ -71,7 +71,7 @@ export default function HowWeWork() {
 
   return (
     <section ref={sectionRef} id="como-trabajamos" className="py-16 px-6 lg:overflow-hidden">
-      <div className="max-w-6xl mx-auto mb-12">
+      <div data-reveal className="max-w-6xl mx-auto mb-12">
         <div className="text-center mb-4">
           <p className="text-forma-pink font-semibold text-sm tracking-widest uppercase">
             Cómo trabajamos

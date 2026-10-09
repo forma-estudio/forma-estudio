@@ -36,7 +36,7 @@ export default function Contact() {
 
   return (
     <section id="contacto" className="vortex-section">
-      <div className="badge">
+      <div data-reveal className="badge">
         <div className="mx-auto w-full max-w-[560px]">
           <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">Empecemos tu proyecto</h2>
           <p className="text-sm md:text-base text-gray-300 mb-6">

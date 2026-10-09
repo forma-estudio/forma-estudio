@@ -6,11 +6,13 @@ import AboutUs from '@/components/AboutUs'
 import PhraseForma from '@/components/PhraseForma'
 import Contact from '@/components/Contact'
 import ParticlesBackground from '@/components/ParticlesBackground'
+import ScrollReveal from '@/components/ScrollReveal'
 
 export default function Home() {
   return (
     <>
       <ParticlesBackground />
+      <ScrollReveal />
       <div id="hero">
         <Hero />
       </div>
