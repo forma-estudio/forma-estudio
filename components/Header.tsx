@@ -34,7 +34,6 @@ export default function Header() {
     { href: '#servicios', label: 'Servicios' },
     { href: '#como-trabajamos', label: 'Proceso' },
     { href: '#sobre-nosotros', label: 'Sobre Nosotros' },
-    { href: '#contacto', label: 'Contacto' },
   ]
 
   // Sin transform cuando se ve: el panel mobile es fixed y un transform en el header lo dejaría relativo al header
@@ -49,7 +48,7 @@ export default function Header() {
         </a>
 
         {/* Desktop menu */}
-        <div className="hidden md:flex gap-8">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -59,6 +58,7 @@ export default function Header() {
               {link.label}
             </a>
           ))}
+          <a href="mailto:formawebok@gmail.com?subject=Consulta%20desde%20la%20web" className="btn-aura inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold transition">Escribinos</a>
         </div>
 
         {/* Mobile hamburger button */}
@@ -87,6 +87,7 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
+            <a href="mailto:formawebok@gmail.com?subject=Consulta%20desde%20la%20web" onClick={closeMenu} className="btn-aura inline-flex items-center justify-center rounded-full px-8 min-h-12 text-base font-semibold mt-4">Escribinos</a>
           </div>
         </div>
       )}

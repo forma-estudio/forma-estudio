@@ -113,4 +113,6 @@ Los efectos pesados se simplifican en mobile manteniendo la misma estética:
 
 Nav → Hero → Impacto → Cómo trabajamos → Servicios (carrusel) → Sobre nosotros (+ preguntas frecuentes) → Dale FORMA a tu negocio → Empecemos tu proyecto (formulario) → Footer.
 
+Nav: links Home, Servicios, Proceso y Sobre nosotros, más el botón Escribinos (btn-aura) que abre mailto:formawebok@gmail.com con asunto 'Consulta desde la web'.
+
 Pendiente, a resolver aparte: logo tipográfico del nav (la F con el palo superior extendido como techo sobre "ORMA", un solo SVG con un degradé continuo). La implementación anterior no coincidió con el diseño aprobado. No tocar el logo hasta que se pida.
