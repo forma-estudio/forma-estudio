@@ -58,7 +58,7 @@ export default function Header() {
               {link.label}
             </a>
           ))}
-          <a href="mailto:formawebok@gmail.com?subject=Consulta%20desde%20la%20web" className="btn-aura inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold transition">Escribinos</a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=formawebok@gmail.com&su=Consulta%20desde%20la%20web" target="_blank" rel="noopener noreferrer" className="btn-aura inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold transition">Escribinos</a>
         </div>
 
         {/* Mobile hamburger button */}
@@ -87,7 +87,7 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
-            <a href="mailto:formawebok@gmail.com?subject=Consulta%20desde%20la%20web" onClick={closeMenu} className="btn-aura inline-flex items-center justify-center rounded-full px-8 min-h-12 text-base font-semibold mt-4">Escribinos</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=formawebok@gmail.com&su=Consulta%20desde%20la%20web" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="btn-aura inline-flex items-center justify-center rounded-full px-8 min-h-12 text-base font-semibold mt-4">Escribinos</a>
           </div>
         </div>
       )}
