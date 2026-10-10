@@ -6,10 +6,10 @@ export default function Hero() {
       className="min-h-screen text-forma-white flex items-center justify-center pt-20 relative overflow-hidden"
     >
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-        <p className="flex items-center justify-center gap-3 mb-8 text-xs md:text-sm uppercase tracking-[0.3em] font-normal text-[#B98CE8]">
-          <span aria-hidden className="h-px w-8 bg-[#B98CE8]/60" />
+        <p className="flex items-center justify-center gap-2 sm:gap-3 mb-8 text-xs md:text-sm uppercase tracking-[0.15em] sm:tracking-[0.3em] font-normal text-[#B98CE8] whitespace-nowrap">
+          <span aria-hidden className="h-px w-5 sm:w-8 bg-[#B98CE8]/60" />
           Estudio de diseño web
-          <span aria-hidden className="h-px w-8 bg-[#B98CE8]/60" />
+          <span aria-hidden className="h-px w-5 sm:w-8 bg-[#B98CE8]/60" />
         </p>
         <div className="mb-6 flex flex-col items-center">
           <h1 className="font-display text-[clamp(2rem,10.8vw,3.5rem)] md:text-[clamp(2.5rem,6.4vw,4.5rem)] font-bold text-center leading-tight md:whitespace-nowrap md:leading-tight max-md:text-balance">
