@@ -48,7 +48,7 @@ export default function AboutUs() {
     >
       {/* Contenido */}
       <div className="max-w-3xl mx-auto relative z-10">
-        <h2 data-reveal className="font-display text-5xl md:text-7xl font-bold mb-12 text-[#B14CFF]">
+        <h2 data-reveal className="font-display text-5xl md:text-7xl font-bold mb-12 text-[#B98CE8]">
           Sobre nosotros
         </h2>
 
@@ -65,7 +65,7 @@ export default function AboutUs() {
           <div className="mt-12 relative hidden lg:inline-block">
             <div
               ref={faqButtonRef}
-              className="inline-flex items-center gap-2 bg-forma-purple text-white px-8 py-4 rounded-full font-semibold [@media(hover:hover)]:hover:bg-forma-pink [@media(hover:hover)]:hover:text-forma-black active:bg-forma-pink active:text-forma-black btn-aura transition-all transform hover:scale-105 cursor-pointer"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold btn-aura transition-all transform hover:scale-105 cursor-pointer"
               style={{ userSelect: 'none' }}
             >
               PREGUNTAS FRECUENTES
@@ -75,7 +75,7 @@ export default function AboutUs() {
             {showFAQ && (
               <div
                 data-faq-tooltip
-                className="absolute bg-forma-purple text-white rounded-lg p-6 shadow-lg z-20"
+                className="absolute bg-[#7C4DCC] text-white rounded-lg p-6 shadow-lg z-20"
                 style={{
                   left: '100%',
                   top: '50%',

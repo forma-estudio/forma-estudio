@@ -151,7 +151,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
                 <div className="flex flex-col items-center" style={{ gap: '24px', paddingBottom: '60px' }}>
                   <a
                     href="#contacto"
-                    className="inline-flex items-center gap-2 bg-forma-purple text-white px-10 py-4 rounded-full font-semibold [@media(hover:hover)]:hover:bg-forma-pink [@media(hover:hover)]:hover:text-forma-black active:bg-forma-pink active:text-forma-black btn-aura transition-all transform lg:hover:scale-105"
+                    className="inline-flex items-center gap-2 px-10 py-4 rounded-full font-semibold btn-aura transition-all transform lg:hover:scale-105"
                   >
                     {slide.button}
                     <span className="arrow-icon transition-transform duration-300">
@@ -165,7 +165,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
                       <button
                         key={idx}
                         onClick={() => goToSlide(idx)}
-                        className={`transition-all duration-300 ${idx === currentSlide ? 'w-8 h-2 bg-[#B14CFF] rounded-full' : 'w-2 h-2 bg-gray-600 rounded-full'}`}
+                        className={`transition-all duration-300 ${idx === currentSlide ? 'w-8 h-2 bg-[#B98CE8] rounded-full' : 'w-2 h-2 bg-gray-600 rounded-full'}`}
                         aria-label={`Go to slide ${idx + 1}`}
                       />
                     ))}

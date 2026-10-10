@@ -51,7 +51,7 @@ export default function Contact() {
               required
               autoComplete="name"
               placeholder="Tu nombre"
-              className="w-full px-4 py-3 lg:py-2 rounded-lg bg-forma-white/10 border border-forma-white/20 text-forma-white placeholder-gray-500 text-base lg:text-sm focus:outline-none focus:border-[#B14CFF] transition"
+              className="w-full px-4 py-3 lg:py-2 rounded-lg bg-forma-white/10 border border-forma-white/20 text-forma-white placeholder-gray-500 text-base lg:text-sm focus:outline-none focus:border-[#B98CE8] transition"
             />
             <label htmlFor="contact-email" className="sr-only">Tu email</label>
             <input
@@ -61,7 +61,7 @@ export default function Contact() {
               required
               autoComplete="email"
               placeholder="Tu email"
-              className="w-full px-4 py-3 lg:py-2 rounded-lg bg-forma-white/10 border border-forma-white/20 text-forma-white placeholder-gray-500 text-base lg:text-sm focus:outline-none focus:border-[#B14CFF] transition"
+              className="w-full px-4 py-3 lg:py-2 rounded-lg bg-forma-white/10 border border-forma-white/20 text-forma-white placeholder-gray-500 text-base lg:text-sm focus:outline-none focus:border-[#B98CE8] transition"
             />
             <label htmlFor="contact-message" className="sr-only">Contanos sobre tu proyecto</label>
             <textarea
@@ -70,13 +70,13 @@ export default function Contact() {
               required
               placeholder="Contanos sobre tu proyecto"
               rows={4}
-              className="w-full px-4 py-3 lg:py-2 rounded-lg bg-forma-white/10 border border-forma-white/20 text-forma-white placeholder-gray-500 text-base lg:text-sm focus:outline-none focus:border-[#B14CFF] transition resize-none"
+              className="w-full px-4 py-3 lg:py-2 rounded-lg bg-forma-white/10 border border-forma-white/20 text-forma-white placeholder-gray-500 text-base lg:text-sm focus:outline-none focus:border-[#B98CE8] transition resize-none"
             />
             <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="w-full px-4 py-2 min-h-12 lg:min-h-0 bg-forma-purple text-white rounded-full lg:rounded-lg font-semibold text-base lg:text-sm [@media(hover:hover)]:enabled:hover:bg-forma-pink [@media(hover:hover)]:enabled:hover:text-forma-black enabled:active:bg-forma-pink enabled:active:text-forma-black disabled:opacity-70 btn-aura transition"
+              className="w-full px-4 py-2 min-h-12 lg:min-h-0 rounded-full lg:rounded-lg font-semibold text-base lg:text-sm btn-aura transition"
             >
               {status === 'sending' ? 'Enviando...' : 'Enviar'}
             </button>
@@ -88,7 +88,7 @@ export default function Contact() {
           <p className="text-xs md:text-sm text-gray-400 mb-3">
             O escribinos directamente:
           </p>
-          <a href="mailto:formawebok@gmail.com" className="text-[#B14CFF] hover:text-white transition font-bold text-sm md:text-base inline-block">
+          <a href="mailto:formawebok@gmail.com" className="text-[#B98CE8] hover:text-white transition font-bold text-sm md:text-base inline-block">
             formawebok@gmail.com
           </a>
         </div>
@@ -110,7 +110,7 @@ export default function Contact() {
           position: relative;
           z-index: 5;
           background: rgba(0, 0, 0, 0.5);
-          border: 1px solid rgba(177, 76, 255, 0.5);
+          border: 1px solid rgba(185, 140, 232, .5);
           color: #fff;
           padding: 48px 24px;
           border-radius: 28px;

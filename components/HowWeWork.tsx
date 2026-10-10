@@ -66,7 +66,7 @@ export default function HowWeWork() {
     <section ref={sectionRef} id="como-trabajamos" className="py-16 px-6 lg:overflow-hidden">
       <div data-reveal className="max-w-6xl mx-auto mb-12">
         <div className="text-center mb-4">
-          <p className="text-[#B14CFF] font-semibold text-sm tracking-widest uppercase">
+          <p className="text-[#B98CE8] font-semibold text-sm tracking-widest uppercase">
             Cómo trabajamos
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function HowWeWork() {
               key={`card-${step.number}`}
               className={`card-item rounded-2xl p-6 lg:p-8 w-full xl:flex-1 xl:min-w-0 xl:max-w-[380px] relative overflow-hidden isolate border border-white/25 flex flex-col text-white lg:transition-transform lg:duration-300 lg:ease-out lg:cursor-pointer lg:min-h-[clamp(320px,28vw,420px)]`}
             >
-              <div aria-hidden className="absolute inset-0 -z-10 bg-[#8B2FD9] opacity-25" />
+              <div aria-hidden className="absolute inset-0 -z-10 bg-[#9B6FE0] opacity-[0.22]" />
               <div>
                 <div className="font-display text-6xl md:text-7xl font-bold mb-4">
                   #{step.number}
