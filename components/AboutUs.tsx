@@ -75,7 +75,7 @@ export default function AboutUs() {
             {showFAQ && (
               <div
                 data-faq-tooltip
-                className="absolute bg-forma-pink text-forma-black rounded-lg p-6 shadow-lg z-20"
+                className="absolute bg-forma-purple text-white rounded-lg p-6 shadow-lg z-20"
                 style={{
                   left: '100%',
                   top: '50%',

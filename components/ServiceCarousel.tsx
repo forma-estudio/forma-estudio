@@ -165,7 +165,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
                       <button
                         key={idx}
                         onClick={() => goToSlide(idx)}
-                        className={`transition-all duration-300 ${idx === currentSlide ? 'w-8 h-2 bg-forma-pink rounded-full' : 'w-2 h-2 bg-gray-600 rounded-full'}`}
+                        className={`transition-all duration-300 ${idx === currentSlide ? 'w-8 h-2 bg-[#B14CFF] rounded-full' : 'w-2 h-2 bg-gray-600 rounded-full'}`}
                         aria-label={`Go to slide ${idx + 1}`}
                       />
                     ))}

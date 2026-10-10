@@ -33,7 +33,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="hover:text-forma-pink transition"
+              className="hover:text-[#B14CFF] transition"
             >
               {link.label}
             </a>
@@ -61,7 +61,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={handleLinkClick}
-                className="text-2xl font-semibold hover:text-forma-pink transition"
+                className="text-2xl font-semibold hover:text-[#B14CFF] transition"
               >
                 {link.label}
               </a>

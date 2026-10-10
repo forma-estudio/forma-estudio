@@ -42,10 +42,8 @@ html.reveal-ready [data-reveal].is-revealed {
   transform: none;
 }
 
-.btn-aura { position: relative; isolation: isolate; }
-.btn-aura::before { content: ''; position: absolute; inset: -6px; border-radius: inherit; background: #B14CFF; filter: blur(14px); opacity: .35; z-index: -1; animation: aura-pulse 2.8s ease-in-out infinite; pointer-events: none; }
-@keyframes aura-pulse { 0%, 100% { opacity: .3; transform: scale(.96); } 50% { opacity: .7; transform: scale(1.04); } }
-.btn-aura:hover::before, .btn-aura:active::before { background: #FF91A4; }
-/* Enviar deshabilitado ("Enviando..."): sin cambio de color en hover */
-.btn-aura:disabled::before { background: #B14CFF; }
-@media (prefers-reduced-motion: reduce) { .btn-aura::before { animation: none; opacity: .4; } }
+.btn-aura { box-shadow: 0 0 16px 2px rgba(177, 76, 255, .35); animation: aura-pulse 2.8s ease-in-out infinite; }
+@keyframes aura-pulse { 0%, 100% { box-shadow: 0 0 14px 2px rgba(177, 76, 255, .3); } 50% { box-shadow: 0 0 30px 8px rgba(177, 76, 255, .65); } }
+.btn-aura:enabled:hover, a.btn-aura:hover, div.btn-aura:hover, .btn-aura:enabled:active, a.btn-aura:active, div.btn-aura:active { animation-name: aura-pulse-pink; }
+@keyframes aura-pulse-pink { 0%, 100% { box-shadow: 0 0 14px 2px rgba(255, 145, 164, .3); } 50% { box-shadow: 0 0 30px 8px rgba(255, 145, 164, .65); } }
+@media (prefers-reduced-motion: reduce) { .btn-aura { animation: none; } }
