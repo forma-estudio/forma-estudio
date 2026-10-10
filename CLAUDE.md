@@ -74,7 +74,7 @@ Alturas de referencia: 1024px en tablet, 768px en escritorio. Los motores a cubr
 En celular no existe el hover. Todo efecto que hoy depende del cursor tiene equivalente táctil:
 
 - Botones: el cambio de color al hover pasa al estado `:active` (presionado).
-- Preguntas frecuentes: debajo de 1024 (mobile y tablet) son un acordeón (`FaqAccordion.tsx`): lista con líneas finas, "+" violeta que rota a ×, una abierta por vez. En escritorio siguen siendo el botón violeta con tooltip al costado.
+- Preguntas frecuentes: acordeón en todos los anchos (FaqAccordion.tsx), debajo del texto de Sobre nosotros, con título h3 'Preguntas frecuentes' más chico que los títulos de sección. Una abierta por vez.
 - Tarjetas de "Cómo trabajamos": debajo de 768, apiladas; de 768 a 1279, grilla 2x2; desde 1280, fila de 4 con vaivén de ±20px. Debajo de 1024, las tarjetas aparecen al scrollear (IntersectionObserver).
 - Carrusel de Servicios: autoplay que sigue después de tocar los puntitos o deslizar; la pausa por hover es solo para dispositivos con mouse.
 - Nav: se esconde al scrollear hacia abajo y reaparece al scrollear hacia arriba (umbral 8px); arriba de todo y con el menú mobile abierto siempre se ve.
