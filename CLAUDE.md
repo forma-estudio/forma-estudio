@@ -27,7 +27,7 @@ Desarrollás el sitio técnicamente. Las decisiones de diseño y de contenido so
 - Palabras clave con glow pulsante en loop infinito y sin cortes (keyframes con 0% y 100% idénticos).
 - Botones: forma pill (bordes totalmente redondeados).
 - Prohibido: sombras excesivas, gradientes decorativos que no estén ya definidos, emojis en la interfaz, librerías de UI genéricas.
-- Las secciones no llevan fondo sólido para que se vean las partículas. El fondo de la página es #101820. Los botones siempre van con color pleno. Las tarjetas de Cómo trabajamos llevan borde fino (border-white/25) y el degradé en opacity-25. Excepción: Empecemos tu proyecto (Contact.tsx) lleva fondo pleno #101820, sin partículas.
+- Las secciones no llevan fondo sólido para que se vean las partículas. El fondo de la página es #101820. Los botones siempre van con color pleno. Las tarjetas de Cómo trabajamos llevan borde fino (border-white/25) y una capa violeta lisa en opacity-[0.22]. Excepción: Empecemos tu proyecto (Contact.tsx) lleva fondo pleno #101820, sin partículas.
 - Destacados y títulos en lavanda #B98CE8, sin degradé violeta-rosa; el título del Hero va en blanco. Botones de acción: fondo #7C4DCC y texto blanco, con una línea de brillo blanca que recorre el borde (.btn-aura en globals.css, borde conic-gradient animado con @property --ang); pasan a rosa solo en hover o al tocarlos. Tarjetas de Cómo trabajamos: capa bg-[#9B6FE0] opacity-[0.22]. El rosa queda solo para el hover de los botones, el footer, el logo y las partículas.
 
 ---
