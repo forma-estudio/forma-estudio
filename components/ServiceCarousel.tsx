@@ -151,7 +151,7 @@ export default function ServiceCarousel({ withBackground = true }: ServiceCarous
                 <div className="flex flex-col items-center" style={{ gap: '24px', paddingBottom: '60px' }}>
                   <a
                     href="#contacto"
-                    className="inline-flex items-center gap-2 bg-forma-pink text-forma-black px-10 py-4 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform lg:hover:scale-105"
+                    className="inline-flex items-center gap-2 bg-forma-purple text-white px-10 py-4 rounded-full font-semibold [@media(hover:hover)]:hover:bg-forma-pink [@media(hover:hover)]:hover:text-forma-black active:bg-forma-pink active:text-forma-black btn-aura transition-all transform lg:hover:scale-105"
                   >
                     {slide.button}
                     <span className="arrow-icon transition-transform duration-300">

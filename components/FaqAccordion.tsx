@@ -7,7 +7,7 @@ export default function FaqAccordion({ faqs }: { faqs: Faq[] }) {
   const [open, setOpen] = useState<number | null>(null)
   return (
     <div className="pointer-events-auto mt-12">
-      <p className="text-forma-pink font-semibold text-sm tracking-widest uppercase mb-4">Preguntas frecuentes</p>
+      <p className="text-[#B14CFF] font-semibold text-sm tracking-widest uppercase mb-4">Preguntas frecuentes</p>
       <div className="border-t border-white/15">
         {faqs.map((f, i) => {
           const isOpen = open === i

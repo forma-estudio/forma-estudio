@@ -6,11 +6,11 @@ export default function Hero() {
       className="min-h-screen text-forma-white flex items-center justify-center pt-20 relative overflow-hidden"
     >
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-        <div className="inline-block border-2 border-forma-pink text-forma-pink rounded-full px-6 py-3 text-base font-bold mb-8 bg-forma-pink/5">
+        <div className="inline-block border-2 border-[#B14CFF] text-[#B14CFF] rounded-full px-6 py-3 text-base font-bold mb-8 bg-[#B14CFF]/5">
           Estudio de diseño web
         </div>
         <div className="mb-6 flex flex-col items-center">
-          <h1 className="font-display text-[clamp(2rem,10.8vw,3.5rem)] md:text-[clamp(2.5rem,6.4vw,4.5rem)] font-bold text-center leading-tight md:whitespace-nowrap md:leading-tight max-md:text-balance">
+          <h1 className="font-display text-[#B14CFF] text-[clamp(2rem,10.8vw,3.5rem)] md:text-[clamp(2.5rem,6.4vw,4.5rem)] font-bold text-center leading-tight md:whitespace-nowrap md:leading-tight max-md:text-balance">
             Llevamos tu visión más allá
           </h1>
           <div className="font-display text-[min(calc((100vw-48px)*0.09),3rem)] md:text-[min(7.5vw,4.5rem)] font-bold leading-tight mt-4 inline-block min-h-8 md:block md:mt-3 md:min-h-0 md:leading-tight">
@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="flex flex-col gap-3 justify-center w-full px-0 md:px-6">
           <a
             href="#contacto"
-            className="w-full md:w-auto bg-forma-pink text-forma-black px-8 py-3 md:py-4 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105 inline-flex items-center justify-center min-h-12 text-center"
+            className="w-full md:w-auto bg-forma-purple text-white px-8 py-3 md:py-4 rounded-full font-semibold [@media(hover:hover)]:hover:bg-forma-pink [@media(hover:hover)]:hover:text-forma-black active:bg-forma-pink active:text-forma-black btn-aura transition-all transform hover:scale-105 inline-flex items-center justify-center min-h-12 text-center"
           >
             Hablemos de tu proyecto
           </a>

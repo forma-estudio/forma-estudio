@@ -48,7 +48,7 @@ export default function AboutUs() {
     >
       {/* Contenido */}
       <div className="max-w-3xl mx-auto relative z-10">
-        <h2 data-reveal className="font-display text-5xl md:text-7xl font-bold mb-12" style={{ color: '#FF91A4' }}>
+        <h2 data-reveal className="font-display text-5xl md:text-7xl font-bold mb-12 text-[#B14CFF]">
           Sobre nosotros
         </h2>
 
@@ -65,7 +65,7 @@ export default function AboutUs() {
           <div className="mt-12 relative hidden lg:inline-block">
             <div
               ref={faqButtonRef}
-              className="inline-flex items-center gap-2 bg-forma-pink text-forma-black px-8 py-4 rounded-full font-semibold hover:bg-forma-purple hover:text-forma-white transition-all transform hover:scale-105 cursor-pointer"
+              className="inline-flex items-center gap-2 bg-forma-purple text-white px-8 py-4 rounded-full font-semibold [@media(hover:hover)]:hover:bg-forma-pink [@media(hover:hover)]:hover:text-forma-black active:bg-forma-pink active:text-forma-black btn-aura transition-all transform hover:scale-105 cursor-pointer"
               style={{ userSelect: 'none' }}
             >
               PREGUNTAS FRECUENTES

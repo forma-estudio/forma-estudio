@@ -28,6 +28,7 @@ Desarrollás el sitio técnicamente. Las decisiones de diseño y de contenido so
 - Botones: forma pill (bordes totalmente redondeados).
 - Prohibido: sombras excesivas, gradientes decorativos que no estén ya definidos, emojis en la interfaz, librerías de UI genéricas.
 - Las secciones no llevan fondo sólido para que se vean las partículas. El fondo de la página es #101820. Los botones siempre van con color pleno. Las tarjetas de Cómo trabajamos llevan borde fino (border-white/25) y el degradé en opacity-25. Excepción: Empecemos tu proyecto (Contact.tsx) lleva fondo pleno #101820, sin partículas.
+- Destacados y títulos en violeta liso #B14CFF, sin degradé violeta-rosa. Botones de acción: violeta (bg-forma-purple, texto blanco) con aura violeta latiendo (.btn-aura en globals.css); pasan a rosa solo en hover o al tocarlos. Tarjetas de Cómo trabajamos: capa bg-[#8B2FD9] opacity-25.
 
 ---
 
@@ -73,7 +74,7 @@ Alturas de referencia: 1024px en tablet, 768px en escritorio. Los motores a cubr
 En celular no existe el hover. Todo efecto que hoy depende del cursor tiene equivalente táctil:
 
 - Botones: el cambio de color al hover pasa al estado `:active` (presionado).
-- Preguntas frecuentes: debajo de 1024 (mobile y tablet) son un acordeón (`FaqAccordion.tsx`): lista con líneas finas, "+" violeta que rota a ×, una abierta por vez. En escritorio siguen siendo el botón rosa con tooltip al costado.
+- Preguntas frecuentes: debajo de 1024 (mobile y tablet) son un acordeón (`FaqAccordion.tsx`): lista con líneas finas, "+" violeta que rota a ×, una abierta por vez. En escritorio siguen siendo el botón violeta con tooltip al costado.
 - Tarjetas de "Cómo trabajamos": debajo de 768, apiladas; de 768 a 1279, grilla 2x2; desde 1280, fila de 4 con vaivén de ±20px. Debajo de 1024, las tarjetas aparecen al scrollear (IntersectionObserver).
 - Carrusel de Servicios: autoplay que sigue después de tocar los puntitos o deslizar; la pausa por hover es solo para dispositivos con mouse.
 

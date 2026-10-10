@@ -76,7 +76,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="w-full px-4 py-2 min-h-12 lg:min-h-0 bg-forma-pink text-forma-black rounded-full lg:rounded-lg font-semibold text-base lg:text-sm hover:bg-forma-purple hover:text-forma-white active:bg-forma-purple active:text-forma-white transition"
+              className="w-full px-4 py-2 min-h-12 lg:min-h-0 bg-forma-purple text-white rounded-full lg:rounded-lg font-semibold text-base lg:text-sm [@media(hover:hover)]:enabled:hover:bg-forma-pink [@media(hover:hover)]:enabled:hover:text-forma-black enabled:active:bg-forma-pink enabled:active:text-forma-black disabled:opacity-70 btn-aura transition"
             >
               {status === 'sending' ? 'Enviando...' : 'Enviar'}
             </button>

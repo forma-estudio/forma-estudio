@@ -57,12 +57,12 @@ export default function Impact() {
           <div data-reveal>
             <h2 className="font-display text-[clamp(2rem,7vw,3rem)] md:text-5xl font-bold text-white mb-6 leading-tight">
               Convertimos la eficiencia{' '}
-              <span className="bg-gradient-to-r from-forma-purple to-forma-pink bg-clip-text text-transparent">
+              <span className="text-[#B14CFF]">
                 tecnológica
               </span>
               {' '}en impacto real.
             </h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-forma-purple to-forma-pink mb-8" />
+            <div className="w-16 h-1 bg-[#B14CFF] mb-8" />
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
               En <span className="font-bold">FORMA</span> te ayudamos a que tu negocio crezca, con estrategia, tecnología y creatividad que dan resultados.
             </p>

@@ -41,3 +41,11 @@ html.reveal-ready [data-reveal].is-revealed {
   opacity: 1;
   transform: none;
 }
+
+.btn-aura { position: relative; isolation: isolate; }
+.btn-aura::before { content: ''; position: absolute; inset: -6px; border-radius: inherit; background: #B14CFF; filter: blur(14px); opacity: .35; z-index: -1; animation: aura-pulse 2.8s ease-in-out infinite; pointer-events: none; }
+@keyframes aura-pulse { 0%, 100% { opacity: .3; transform: scale(.96); } 50% { opacity: .7; transform: scale(1.04); } }
+.btn-aura:hover::before, .btn-aura:active::before { background: #FF91A4; }
+/* Enviar deshabilitado ("Enviando..."): sin cambio de color en hover */
+.btn-aura:disabled::before { background: #B14CFF; }
+@media (prefers-reduced-motion: reduce) { .btn-aura::before { animation: none; opacity: .4; } }
