@@ -1,10 +1,27 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Logo from './Logo'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [hidden, setHidden] = useState(false)
+
+  // Se esconde al bajar y vuelve al subir (umbral 8px); arriba de todo siempre se ve
+  useEffect(() => {
+    let lastY = window.scrollY
+    let raf = 0
+    const update = () => {
+      raf = 0
+      const y = window.scrollY
+      if (y < 80) { setHidden(false); lastY = y }
+      else if (y - lastY > 8) { setHidden(true); lastY = y }
+      else if (lastY - y > 8) { setHidden(false); lastY = y }
+    }
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(update) }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => { window.removeEventListener('scroll', onScroll); cancelAnimationFrame(raf) }
+  }, [])
 
   const closeMenu = () => setMenuOpen(false)
 
@@ -20,8 +37,12 @@ export default function Header() {
     { href: '#contacto', label: 'Contacto' },
   ]
 
+  // Sin transform cuando se ve: el panel mobile es fixed y un transform en el header lo dejaría relativo al header
   return (
-    <header className="fixed w-full top-0 z-50 bg-forma-black text-forma-white shadow-lg">
+    <header
+      onFocus={() => setHidden(false)}
+      className={`fixed w-full top-0 z-50 bg-forma-black text-forma-white shadow-lg transition-transform duration-300 ease-out motion-reduce:transition-none ${hidden && !menuOpen ? '-translate-y-full' : ''}`}
+    >
       <nav className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
         <a href="#hero" className="h-12 flex items-center hover:opacity-80 transition">
           <Logo />
