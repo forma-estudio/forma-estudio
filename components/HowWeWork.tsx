@@ -65,11 +65,6 @@ export default function HowWeWork() {
   return (
     <section ref={sectionRef} id="como-trabajamos" className="py-16 px-6 lg:overflow-hidden">
       <div data-reveal className="max-w-6xl mx-auto mb-12">
-        <div className="text-center mb-4">
-          <p className="text-[#B98CE8] font-semibold text-sm tracking-widest uppercase">
-            Cómo trabajamos
-          </p>
-        </div>
         <h2 className="font-display text-[clamp(2rem,9vw,3rem)] md:text-6xl font-bold text-white text-center mb-12">
           Un proceso sin riesgo inicial
         </h2>
